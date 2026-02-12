@@ -13,9 +13,78 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+
 </head>
 <body>
+  <header class="header">
+    <div class="header_content">
+      <a class="header_homelink" href="/" >
+        <img 
+        src="assets/images/logo.svg" 
+        alt="Weather Home Page"
+        width="197"
+        height="40"
+        class="header_logo"
+        >
+      </a>
 
+      <select class="header_dropdown" >
+        <option value="">Units</option>
+        <option value="C">&deg;C</option>
+        <option value="F">&deg;F</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="main">
+
+
+
+    <section class="hero">
+      <div class="hero_content">
+        <h1 class="hero_title"> How's the sky looking today? </h1>
+        
+        <div class="hero_search">
+          <input class="hero_textbox " type="text" name="search" placeholder="Search for a place...">
+          <button class="hero_button" type="submit" >Search</button>
+        </div>
+      </div>
+
+    </section>
+
+
+
+    <section class="current"></section>
+
+
+
+    <section class="daily_forcast"></section>
+
+
+
+    <section class="hourly_forecast"></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </main>
+
+<!-- 
   Units
 
   Switch to Imperial/Metric
@@ -41,22 +110,23 @@
   Search
 
   Feels like
-  <!-- Insert temperature here -->
+  Insert temperature here 
 
   Humidity
-  <!-- Insert humidity here -->
+  Insert humidity here 
 
   Wind
-  <!-- Insert wind here -->   
+  Insert wind here  
   
   Precipitation
-  <!-- Insert precipitation here -->
+  Insert precipitation here
 
   Daily forecast
-  <!-- Insert daily forecast for the next 7 days here -->
+  Insert daily forecast for the next 7 days here 
 
   Hourly forecast
-  <!-- Insert hourly forecast for the selected day here -->
+  Insert hourly forecast for the selected day here 
+-->
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
