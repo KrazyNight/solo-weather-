@@ -1,0 +1,203 @@
+@layer global {
+  
+  /* dm-sans-300 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 300;
+    
+    src: url('/assets/fonts/dm-sans-v17-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* dm-sans-500 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/assets/fonts/dm-sans-v17-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* dm-sans-600 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/assets/fonts/dm-sans-v17-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* dm-sans-600italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'DM Sans';
+    font-style: italic;
+    font-weight: 600;
+    src: url('/assets/fonts/dm-sans-v17-latin-600italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* dm-sans-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/assets/fonts/dm-sans-v17-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* bricolage-grotesque-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Bricolage Grotesque';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/assets/fonts/bricolage-grotesque-v9-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  :root {
+      --c-neutral-900: hsl(243, 96%, 9%);
+      --c-neutral-800: hsl(243, 27%, 20%);
+      --c-neutral-700: hsl(243, 23%, 24%);
+      --c-neutral-600: hsl(243, 23%, 30%);
+      --c-neutral-300: hsl(240, 6%, 70%);
+      --c-neutral-200: hsl(250, 6%, 84%);
+      --c-neutral-0: hsl(0, 0%, 100%);
+      --c-orange-500: hsl(28, 100%, 52%);
+      --c-blue-500: hsl(233, 67%, 56%);
+      --c-blue-700: hsl(248, 70%, 36%);
+
+
+      --color-main-bg: var(--c-neutral-900);
+      --color-text-light: var(--c-neutral-0);
+      --color-text-med-ligth: var(--c-neutral-200);
+      --color-panel-bg-dark: var(--c-neutral-800);
+      --color-panel-bg-dark-hover: var(--c-neutral-700);
+      --color-panel-bg-med: var(--c-neutral-700);
+      --color-panel-bg-light: var(--c-neutral-600);
+      --color-panel-border: var(--c-neutral-600);
+      --color-button-bg: var(--c-blue-500);
+      --color-button-bg-hover: var(--c-blue-700);
+
+      /* Q1:  */
+      /* font-size:  */
+      /* what's the meaning of ?:  calc( # / 16 * 1 rem) */
+      /* ans: ? */
+      /* 16px = 1rem  */
+      /* use rem because it's easier to change brower base font size */
+
+      --fs-96: calc(96 / 16 * 1rem);
+      --fs-52: calc(52 / 16 * 1rem);
+      --fs-32: calc(32 / 16 * 1rem);
+      --fs-28: calc(28 / 16 * 1rem);
+      --fs-20: calc(20 / 16 * 1rem);
+      --fs-18: calc(18 / 16 * 1rem);
+      --fs-16: calc(16 / 16 * 1rem);
+      --fs-14: calc(14 / 16 * 1rem);
+
+      --font-size-h1: var(--fs-52);
+      --font-size-dropdown: var(--fs-14);
+       
+      --font-size-search: var(--fs-20);
+      --font-size-city: var(--fs-28);
+      --font-size-date: var(--fs-18);
+      --font-size-temp: var(--fs-96);
+      --font-size-panel-title: var(--fs-18);
+      --font-size-panel-value: var(--fs-32);
+      --font-size-forecast-title: var(--fs-20);
+      --font-size-forecast-day: var(--fs-18);
+      --font-size-forecast-temp: var(--fs-16);
+      --font-size-forecast-dropdown: var(--fs-16);
+      --font-size-forecast-hour: var(--fs-20);
+  }
+
+  *,
+  *::before,
+  *::after {
+      box-sizing: borderbox;
+  }
+
+  /* 
+  This forces "padding and borders" to be included "within" an element's specified "width and height".
+  * (Universal Selector): Targets every single HTML element on the page.
+
+  *::before, *::after: Ensures that "pseudo-elements" (content generated via CSS) also adopt this behavior, which is not automatically inherited.
+   
+  box-sizing: border-box: Changes the default box model to a more intuitive model where the size you set is the final size of the element on screen. 
+  
+Example:
+ Without this, a div set to width: 100px; padding: 10px; actually takes up 
+ of space. With this code, it remains exactly 
+ wide. 
+  */
+  
+  * {
+    margin: 0;
+  }
+
+  /* 
+   removes the default margin from every single element on a web page, setting it to 
+. It ensures consistent spacing across different browsers by forcing elements (like <h1>, <p>, or <body>) to have no outer space by default. 
+
+margin: 0;: Sets the outer spacing (margin) for all sides (top, right, bottom, left) to 
+ pixels. 
+  */
+  
+  img {
+    max-width: 100%;
+  }
+  body {
+      font-family: "DM Sans", Arial, Helvetica, sans-serif;
+      font-weight: 500;
+      background-color: var(--color-main-bg);
+      color: var(--color-text-light);
+      /* Above white text */
+      line-height: 1.2;
+      padding-block-end: 80px;
+      /* 
+      padding
+      Block vs. Inline
+
+By now you should have noticed a lot of block and inline in those properties. Once you get your head around the general meaning it might be easier (it was for me).
+
+Inline
+This corresponds to the axis of the text flow. English, for example, has a left-to-right text flow, so the inline axis is horizontal. For Japanese it would be vertical (since it has a top-to-bottom text flow).
+Block
+This is the axis perpendicular to the text flow axis. For English, the block axis is vertical. For Chinese it would be horizontal
+      */
+      
+  }
+  h1 {
+      font-family: "Bricolage Grotesque", Arial, Helvetica, sans-serif;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+    width: 100%;
+    border: none;
+  }
+
+  /* 
+  font: inherit;
+  By default, many form elements have their own browser-specific default font styles, which can vary across operating systems and browsers. This property declaration forces these elements to inherit the font-family, font-size, and other font-related properties from their parent element (which is often the <body> or a wrapper <div>). This ensures the text within the form fields matches the rest of the page's text style.
+  
+  width: 100%;
+  This sets the width of the form elements to 100% of their parent container's width. This is useful for creating full-width form fields that span the entire available horizontal space.
+  Note: If the element also has default padding and border styles applied (which many do), setting width: 100% can cause the element to overflow its container because the padding and border are added on top of the 100% width of the content area. A common accompanying fix is to also apply box-sizing: border-box; which tells the browser to include the padding and border within the specified 100% width.
+
+  border: none;
+  This removes any default borders that browsers apply to form elements. This gives the developer a clean slate to apply custom borders using other CSS properties if desired, or to simply have borderless inputs that blend into the design. The default focus outline (the glow that appears when you click on a form field) can be removed using the outline: none; property, although this is generally not recommended for accessibility reasons. 
+  */
+
+
+
+  
+
+
+
+
+
+}
+
+@layer component {
+
+}
