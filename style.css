@@ -190,6 +190,44 @@ This is the axis perpendicular to the text flow axis. For English, the block axi
 
 
 
+ 
+  .dropdown {
+    background-color: var(--color-panel-bg-dark);
+    color: var(--color-text-light);
+    border: 0;
+    font-size: var(--font-size-dropdown);
+    border-radius: 8px;
+  }
+
+
+ 
+  
+/* 
+  .main {
+    display: grid;
+    row-gap: 320px;
+  }
+
+*/
+
+  /* 
+  The CSS code .main { display: grid; row-gap: 32px; } means that the HTML element with the class main is set up as a CSS grid container, and there will be a vertical space of 32 pixels between its rows. 
+  Here is a breakdown of the individual properties:
+
+ .main: 
+ This is a CSS selector targeting an HTML element with the class attribute "main" (e.g., <div class="main">...</div>).
+ 
+ display: grid;: 
+ This property defines the selected element as a grid container. This allows you to use other CSS Grid properties to control the layout and positioning of its direct child elements (known as grid items) in two dimensions (rows and columns).
+ 
+ row-gap: 32px;: 
+ This property sets the size of the gap (or "gutter") specifically between the rows of the grid layout. In this case, each gap will be 32px tall. The row-gap property is an official way to add vertical spacing, replacing the older grid-row-gap property, which is still accepted by most browsers for compatibility. 
+
+ In summary, any items placed within the .main container will be arranged in a grid, and a consistent 32-pixel vertical space will be maintained between each row of content.
+
+  */
+
+
   
 
 
@@ -199,5 +237,38 @@ This is the axis perpendicular to the text flow axis. For English, the block axi
 }
 
 @layer component {
+    .header {
+
+        .header_container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-block-start: 16px;
+        }
+
+        .header_homelink {}
+
+        .header_logo {
+            width: calc(137 / 16 * 1rem)
+        }
+        .header_dropdown {
+            max-width: 10ch;
+            background-image: url("/assets/images/icon-units.svg");
+            background-repeat: no-repeat;
+            background-position: 16px center;
+            padding: 12px 40px;
+            
+
+        } 
+
+        /* 
+        10ch: The ch unit stands for "character" unit. 
+        It is specifically defined as the horizontal advance 
+        measure of the "0" (zero) glyph. 
+        */
+
+    }
+
+
 
 }
