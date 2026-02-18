@@ -190,6 +190,45 @@ This is the axis perpendicular to the text flow axis. For English, the block axi
 
 
 
+  /* wrapper centers the display, emply space in the left and right */
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr calc(100% - 32px) 1fr;
+
+   @media (width >= calc(700 / 16 * 1rem)) {
+      grid-template-columns: 1fr min(calc(100% - 48px), calc(1216 / 16 * 1rem)) 1fr;
+    }
+    /* calc(100% - 48) is for tablet size
+    
+    */
+
+    > * {
+      grid-column: 2;
+    }
+    /*  Any direct child element of .wrapper is forced into the second column (the center content column), effectively centering all content.  */
+  
+  }
+
+  /* 
+  The Layout Logic
+Code Segment 	Function
+grid-template-columns	Creates 3 columns: flexible (1fr), content (calc), flexible (1fr).
+1fr ... 1fr	These outer columns expand equally to fill all remaining space, pushing the middle column to the center.
+calc(100% - 32px)	On small screens, the content takes the full width minus 32px (leaving a 16px gap on each side).
+grid-column: 2	Forces all direct children (> *) of the wrapper into the middle column.
+The Media Query Breakpoint
+When the screen width reaches approximately 700px (calculated as 700 / 16 * 1rem), the middle column's behavior changes: 
+Maximum Width: The content column is capped at 1216px (derived from 1216 / 16 * 1rem).
+Fluidity: It uses the min() function to choose between 1216px or "100% minus 48px," whichever is smaller. This ensures the content doesn't hit the screen edges on medium displays. 
+Visual Result
+Mobile: Content is centered with a small 16px margin on each side.
+Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, while the outer 1fr columns grow to fill the rest of the widescreen monito
+  
+  
+  */
+
+
  
   .dropdown {
     background-color: var(--color-panel-bg-dark);
