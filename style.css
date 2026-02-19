@@ -403,7 +403,114 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
 
     }
 
-    
+    .currently {
+      .currently_container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-block-end: 20px;
+        padding: 40px 24px;
+        background-image: url("/assets/images/bg-today-small.svg");
+        background-repeat: no-repeat;
+        background-color: var(--c-blue-700);
+        background-size: cover;
+        background-position: center bottom;
+        border-radius: 20px;
+        overflow: clip;
+
+
+
+        @media (width >= calc(700 / 16 * 1rem)) {
+        
+        background-image: url("/assets/images/bg-today-large.svg");
+        padding-block: 83px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        
+      }
+
+
+
+      }
+
+      .current_location {
+        text-align: center;
+      }
+      .current_city {
+        font-size: var(--font-size-city);
+        font-weight: 700;
+        margin-block-end: 12px;
+      }
+      .current_date {
+        font-size: var(--font-size-date);
+        color: var(--color-text-med-light);
+      }
+      .current_info {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .current_icon {
+        width: 120px;
+        height: auto;
+      }
+      .current_temp {
+        font-size: var(--font-size-temp);
+        line-height: 1;
+        letter-spacing: -2%;
+        font-weight: 600;
+        font-style: italic;
+      }
+      .current_conditions {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+
+      }
+      .current_condition {}
+      .current_condition-title {}
+      .current_condition-value {}
+    }
+
+
+
+
+
+
+
+
+    .daily {
+      .daily_title {}
+      .daily_container {}
+      .daily_day {}
+      .daily_day-title {}
+      .daily_day-icon {}
+      .daily_day-temp {}
+      .daily_day-high {}
+      .daily_day-low {}
+
+    }
+
+
+
+
+
+    .hourly {
+      .hourly_container {}
+      .hourly_header {}
+      .hourly_title {}
+      .hourly_day-dropdown {}
+      .hourly_forecast-hours-info {}
+      .hourly_forecast-hour {}
+      .hourly_forecast-hour-icon {}
+      .hourly_forecast-hour-time {}
+      .hourly_forecast-hour-temp {}
+      
+    }
+
+
+
 
 
 
