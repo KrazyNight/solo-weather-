@@ -105,6 +105,12 @@
       --font-size-forecast-temp: var(--fs-16);
       --font-size-forecast-dropdown: var(--fs-16);
       --font-size-forecast-hour: var(--fs-20);
+
+      @media (width >= calc(700 / 16 * 1rem)) {
+      --font-size-dropdown: var(--fs-16);
+    }
+
+
   }
 
   *,
@@ -194,6 +200,7 @@ This is the axis perpendicular to the text flow axis. For English, the block axi
 
   .wrapper {
     display: grid;
+    
     grid-template-columns: 1fr calc(100% - 32px) 1fr;
 
    @media (width >= calc(700 / 16 * 1rem)) {
@@ -240,14 +247,19 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
 
 
  
-  
-/* 
+
   .main {
     display: grid;
-    row-gap: 320px;
+    row-gap: 32px;
   }
 
-*/
+  .block {
+    background-color: var(--color-panel-bg-dark);
+    border: 1px solid var(--color-panel-border);
+    border-radius: 12px;
+  }
+ 
+
 
   /* 
   The CSS code .main { display: grid; row-gap: 32px; } means that the HTML element with the class main is set up as a CSS grid container, and there will be a vertical space of 32 pixels between its rows. 
@@ -288,7 +300,11 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
         .header_homelink {}
 
         .header_logo {
-            width: calc(137 / 16 * 1rem)
+            width: calc(137 / 16 * 1rem);
+
+            @media (width >= calc(700 / 16 * 1rem)) {
+              width: calc(197 / 16 * 1rem);
+            }
         }
         .header_dropdown {
             max-width: 10ch;
@@ -307,6 +323,89 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
         */
 
     }
+
+
+    .hero {
+      .hero_container {
+        display: grid;
+        justify-items: center;
+        padding-block-start: 48px;
+      }
+
+      .hero_title {
+        font-size: var(--font-size-h1);
+        margin-block-end: 48px;
+        text-align: center;
+        line-height: 1.2;
+
+        @media (width < calc(1000 / 16 * 1rem)) {
+        max-width: 15ch;
+      }
+
+      }
+
+      .hero_search {
+        display: grid;
+        gap: 12px 16px;
+        width: 100%;
+        max-width: calc(656 / 16 * 1rem);
+
+        @media (width >= calc(700 / 16 * 1rem)) {
+        grid-template-columns: 1fr auto;
+      }
+        
+
+      }
+      /*  Q 1
+
+      @media (width >= calc(700 / 16 * 1rem)) {
+        grid-template-columns: 1fr auto;
+      }
+      
+      */
+
+      .hero_textbox {
+        background-image: url("/assets/images/icon-search.svg");
+        background-repeat: no-repeat;
+        background-position: 24px center;
+        background-color: var(--color-panel-bg-dark);
+        font-size: var(--font-size-search);
+        padding: 16px 20px 16px 60px;
+        color: var(--color-text-med-light);
+        border-radius: 12px;
+
+        &:focus {
+        outline: 2px solid var(--color-text-med-light);
+      }
+
+
+        
+      }
+      /* Q2
+      &:focus {
+        outline: 2px solid var(--color-text-med-light);
+      }
+      */
+
+      .hero_button {
+        background-color: var(--c-blue-500);
+        border-radius: 12px;
+        font-size: var(--font-size-search);
+        color: var(--color-text-light);
+        padding: 16px 24px;
+        transition: background-color 120ms ease-in-out;
+
+        &:hover {
+          background-color: var(--color-button-bg-hover);
+          cursor: pointer;
+        }
+      }
+
+    }
+
+    
+
+
 
 
 
