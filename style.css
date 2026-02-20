@@ -105,10 +105,18 @@
       --font-size-forecast-temp: var(--fs-16);
       --font-size-forecast-dropdown: var(--fs-16);
       --font-size-forecast-hour: var(--fs-20);
+      
+      
+
+      /* 
 
       @media (width >= calc(700 / 16 * 1rem)) {
       --font-size-dropdown: var(--fs-16);
     }
+      
+      */
+     
+      
 
 
   }
@@ -169,6 +177,7 @@ This is the axis perpendicular to the text flow axis. For English, the block axi
       */
       
   }
+
   h1 {
       font-family: "Bricolage Grotesque", Arial, Helvetica, sans-serif;
   }
@@ -277,9 +286,38 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
  In summary, any items placed within the .main container will be arranged in a grid, and a consistent 32-pixel vertical space will be maintained between each row of content.
 
   */
+  .dashboard {
+    display: grid;
+    gap: 32px;
+    grid-template-areas:
+      "current"
+      "daily"
+      "hourly";
+
+  }
 
 
   
+
+  /* 
+  
+  .dashboard {
+    display: grid;
+    gap: 32px;
+    grid-template-areas:
+      "current"
+      "daily"
+      "hourly";
+
+    @media (width >= calc(1000 / 16 * 1rem)) {
+      gap: 48px 32px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:
+        "current current hourly"
+        "daily daily hourly";
+    }
+  }
+  */
 
 
 
@@ -349,13 +387,19 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
         gap: 12px 16px;
         width: 100%;
         max-width: calc(656 / 16 * 1rem);
+        
 
+        @media (width >= calc(700 / 16 * 1rem)) {
+        grid-template-columns: 1fr auto ;
+      }
+/* 
         @media (width >= calc(700 / 16 * 1rem)) {
         grid-template-columns: 1fr auto;
       }
-        
+         */
 
       }
+
       /*  Q 1
 
       @media (width >= calc(700 / 16 * 1rem)) {
@@ -374,9 +418,16 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
         color: var(--color-text-med-light);
         border-radius: 12px;
 
+
         &:focus {
         outline: 2px solid var(--color-text-med-light);
-      }
+      } 
+
+        /* 
+        &:focus {
+        outline: 2px solid var(--color-text-med-light);
+      } 
+        */
 
 
         
@@ -404,6 +455,11 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
     }
 
     .currently {
+      grid-area: current;
+
+      /* 
+      grid-area: current;
+      */
       .currently_container {
         display: flex;
         flex-direction: column;
@@ -428,9 +484,7 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
         justify-content: space-between;
         align-items: center;
         
-      }
-
-
+        }
 
       }
 
@@ -466,6 +520,14 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
+
+        
+
+        /* 
+        @media (width >= calc(700 / 16 * 1rem)) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+        */
 
       }
       /* 
@@ -533,6 +595,8 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
         font-size: var(--font-size-forecast-day);
       }
       .daily_day-icon {
+        width: 60px;
+        height: auto;
 
 /* 
         width: 60px;
@@ -540,6 +604,11 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
          */
       }
       .daily_day-temp {
+        font-size: var(--font-size-forecast-temp);
+        display: flex;
+        justify-content: space-between;
+        justify-self: stretch;
+
 
         /* justify-self: stretch;
         display: flex;
@@ -565,6 +634,12 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
       position: relative;
       */
       .hourly_container {
+        background-color: var(--color-panel-bg-dark);
+        border-radius: 20px;
+        padding: 20px 16px;
+        max-height: 60vh;
+        overflow-y: scroll;
+
 
 
         /* 
@@ -585,6 +660,11 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
 
       }
       .hourly_header {
+        display: flex;
+        gap: 40px;
+        justify-content: space-between;
+        align-items: center;
+        margin-block-end: 16px;
 
         /* 
       display: flex;
@@ -595,6 +675,8 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
         */
       }
       .hourly_title {
+        font-size: var(--font-size-forecast-title);
+        font-weight: 600;
 
         /* 
         font-size: var(--font-size-forecast-title);
@@ -602,6 +684,11 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
         */
       }
       .hourly_day-dropdown {
+        background-color: var(--color-panel-bg-med);
+        width: auto;
+        padding: 8px 16px;
+
+
 
         /*
       background-color: var(--color-panel-bg-med);
@@ -611,6 +698,8 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
 
       }
       .hourly_forecast-hours-info {
+        display: grid;
+        gap: 16px;
 
         /* 
       display: grid;
@@ -618,6 +707,17 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
        */
       }
       .hourly_forecast-hour {
+        display: grid;
+        grid-template-columns: auto auto 1fr;
+        gap: 8px;
+        align-items: center;
+        background-color: var(--color-panel-bg-med);
+        border: 1px solid var(--color-panel-border);
+        padding: 10px 16px 10px 12px;
+        border-radius: 8px;
+        min-height: calc(60 / 16 * 1rem);
+
+        
 
         /* 
       display: grid;
@@ -631,7 +731,18 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
       min-height: calc(60 / 16 * 1rem);
         */
       }
+
+      /* 
+      grid-template-columns: auto auto 1fr;
+      The two auto columns will be flexible enough to accommodate their content's size.
+The 1fr column acts as the "greedy" column, expanding to fill the rest of the container's width, ensuring no empty space remains in the row (unless gaps are added).
+This creates a common layout pattern where the content-heavy columns are sized appropriately, and a main content area expands to fill the screen
+
+
+      */
       .hourly_forecast-hour-icon {
+        width: 40px;
+        height: auto;
 
         /* 
       width: 40px;
@@ -642,6 +753,9 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
         font-size: var(--font-size-forecast-hour);
       }
       .hourly_forecast-hour-temp {
+        font-size: var(--font-size-forecast-temp);
+        justify-self: end;
+        
 
         /*
       font-size: var(--font-size-forecast-temp);
