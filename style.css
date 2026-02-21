@@ -187,7 +187,7 @@ This is the axis perpendicular to the text flow axis. For English, the block axi
   textarea,
   select {
     font: inherit;
-    width: 100%;
+    max-width: 100%;
     border: none;
   }
 
@@ -293,6 +293,16 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
       "current"
       "daily"
       "hourly";
+    
+
+    @media (width >= calc(1000 / 16 * 1rem)) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: 
+      "current current hourly"
+      "daily daily hourly"
+      
+      ;
+    }
 
   }
 
@@ -396,17 +406,18 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
         @media (width >= calc(700 / 16 * 1rem)) {
         grid-template-columns: 1fr auto;
       }
+
+grid-template-columns: 
+    1fr auto;: This property defines the structure of the grid container's columns. It creates two columns:
+1fr: 
+    The first column takes up one fractional unit of the available space in the grid row.
+auto: 
+    The second column is sized automatically based on the width of its content
          */
 
       }
 
-      /*  Q 1
-
-      @media (width >= calc(700 / 16 * 1rem)) {
-        grid-template-columns: 1fr auto;
-      }
       
-      */
 
       .hero_textbox {
         background-image: url("/assets/images/icon-search.svg");
@@ -417,6 +428,7 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
         padding: 16px 20px 16px 60px;
         color: var(--color-text-med-light);
         border-radius: 12px;
+        
 
 
         &:focus {
@@ -432,11 +444,6 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
 
         
       }
-      /* Q2
-      &:focus {
-        outline: 2px solid var(--color-text-med-light);
-      }
-      */
 
       .hero_button {
         background-color: var(--c-blue-500);
@@ -521,6 +528,11 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
 
+
+        @media (width >= calc(700 / 16 * 1rem)) {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
         
 
         /* 
@@ -557,6 +569,8 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
 
     .daily {
 
+      grid-area: daily;
+
       /* grid-area: daily; */
 
       .daily_title {
@@ -568,6 +582,10 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
         grid-template-columns: repeat(3, 1fr);
         gap: 16px;
         min-height: calc(166 / 16 * 1rem);
+
+        @media (width >= calc(700 / 16 * 1rem)) {
+          grid-template-columns: repeat(7, 1fr);
+        }
 
         /*
         @media (width >= calc(700 / 16 * 1rem)) {
@@ -611,6 +629,10 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
 
 
         /* justify-self: stretch;
+
+         used in Grid Layouts that forces an individual grid item to expand and fill
+          the entire width (inline axis) of its assigned grid area
+
         display: flex;
         justify-content: space-between;
         font-size: var(--font-size-forecast-temp); */
@@ -629,6 +651,9 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
 
     .hourly {
 
+      grid-area: hourly;
+      position: relative;
+
       /* 
       grid-area: hourly;
       position: relative;
@@ -639,6 +664,12 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
         padding: 20px 16px;
         max-height: 60vh;
         overflow-y: scroll;
+
+        @media (width >= calc(1000 / 16 * 1rem)) {
+        position: absolute;
+        height: 100%;
+        max-height: none;
+      } 
 
 
 
