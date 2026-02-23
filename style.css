@@ -1,130 +1,130 @@
+
 @layer global {
-  
   /* dm-sans-300 - latin */
   @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'DM Sans';
+    font-family: "DM Sans";
     font-style: normal;
     font-weight: 300;
-    
-    src: url('/assets/fonts/dm-sans-v17-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
+
+    src: url("/assets/fonts/dm-sans-v17-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  } 
   /* dm-sans-500 - latin */
   @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'DM Sans';
+    font-family: "DM Sans";
     font-style: normal;
     font-weight: 500;
-    src: url('/assets/fonts/dm-sans-v17-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("/assets/fonts/dm-sans-v17-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
   /* dm-sans-600 - latin */
   @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'DM Sans';
+    font-family: "DM Sans";
     font-style: normal;
     font-weight: 600;
-    src: url('/assets/fonts/dm-sans-v17-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("/assets/fonts/dm-sans-v17-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
   /* dm-sans-600italic - latin */
   @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'DM Sans';
+    font-family: "DM Sans";
     font-style: italic;
     font-weight: 600;
-    src: url('/assets/fonts/dm-sans-v17-latin-600italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("/assets/fonts/dm-sans-v17-latin-600italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
   /* dm-sans-700 - latin */
   @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'DM Sans';
+    font-family: "DM Sans";
     font-style: normal;
     font-weight: 700;
-    src: url('/assets/fonts/dm-sans-v17-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("/assets/fonts/dm-sans-v17-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
 
   /* bricolage-grotesque-700 - latin */
   @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Bricolage Grotesque';
+    font-family: "Bricolage Grotesque";
     font-style: normal;
     font-weight: 700;
-    src: url('/assets/fonts/bricolage-grotesque-v9-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("/assets/fonts/bricolage-grotesque-v9-latin-700.woff2")
+      format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
 
   :root {
-      --c-neutral-900: hsl(243, 96%, 9%);
-      --c-neutral-800: hsl(243, 27%, 20%);
-      --c-neutral-700: hsl(243, 23%, 24%);
-      --c-neutral-600: hsl(243, 23%, 30%);
-      --c-neutral-300: hsl(240, 6%, 70%);
-      --c-neutral-200: hsl(250, 6%, 84%);
-      --c-neutral-0: hsl(0, 0%, 100%);
-      --c-orange-500: hsl(28, 100%, 52%);
-      --c-blue-500: hsl(233, 67%, 56%);
-      --c-blue-700: hsl(248, 70%, 36%);
+    --c-neutral-900: hsl(243, 96%, 9%);
+    --c-neutral-800: hsl(243, 27%, 20%);
+    --c-neutral-700: hsl(243, 23%, 24%);
+    --c-neutral-600: hsl(243, 23%, 30%);
+    --c-neutral-300: hsl(240, 6%, 70%);
+    --c-neutral-200: hsl(250, 6%, 84%);
+    --c-neutral-0: hsl(0, 0%, 100%);
+    --c-orange-500: hsl(28, 100%, 52%);
+    --c-blue-500: hsl(233, 67%, 56%);
+    --c-blue-700: hsl(248, 70%, 36%);
 
+    --color-main-bg: var(--c-neutral-900);
+    --color-text-light: var(--c-neutral-0);
+    --color-text-med-ligth: var(--c-neutral-200);
+    --color-panel-bg-dark: var(--c-neutral-800);
+    --color-panel-bg-dark-hover: var(--c-neutral-700);
+    --color-panel-bg-med: var(--c-neutral-700);
+    --color-panel-bg-light: var(--c-neutral-600);
+    --color-panel-border: var(--c-neutral-600);
+    --color-button-bg: var(--c-blue-500);
+    --color-button-bg-hover: var(--c-blue-700);
 
-      --color-main-bg: var(--c-neutral-900);
-      --color-text-light: var(--c-neutral-0);
-      --color-text-med-ligth: var(--c-neutral-200);
-      --color-panel-bg-dark: var(--c-neutral-800);
-      --color-panel-bg-dark-hover: var(--c-neutral-700);
-      --color-panel-bg-med: var(--c-neutral-700);
-      --color-panel-bg-light: var(--c-neutral-600);
-      --color-panel-border: var(--c-neutral-600);
-      --color-button-bg: var(--c-blue-500);
-      --color-button-bg-hover: var(--c-blue-700);
+    /* Q1:  */
+    /* font-size:  */
+    /* what's the meaning of ?:  calc( # / 16 * 1 rem) */
+    /* ans: ? */
+    /* 16px = 1rem  */
+    /* use rem because it's easier to change brower base font size */
 
-      /* Q1:  */
-      /* font-size:  */
-      /* what's the meaning of ?:  calc( # / 16 * 1 rem) */
-      /* ans: ? */
-      /* 16px = 1rem  */
-      /* use rem because it's easier to change brower base font size */
+    --fs-96: calc(96 / 16 * 1rem);
+    --fs-52: calc(52 / 16 * 1rem);
+    --fs-32: calc(32 / 16 * 1rem);
+    --fs-28: calc(28 / 16 * 1rem);
+    --fs-20: calc(20 / 16 * 1rem);
+    --fs-18: calc(18 / 16 * 1rem);
+    --fs-16: calc(16 / 16 * 1rem);
+    --fs-14: calc(14 / 16 * 1rem);
 
-      --fs-96: calc(96 / 16 * 1rem);
-      --fs-52: calc(52 / 16 * 1rem);
-      --fs-32: calc(32 / 16 * 1rem);
-      --fs-28: calc(28 / 16 * 1rem);
-      --fs-20: calc(20 / 16 * 1rem);
-      --fs-18: calc(18 / 16 * 1rem);
-      --fs-16: calc(16 / 16 * 1rem);
-      --fs-14: calc(14 / 16 * 1rem);
+    --font-size-h1: var(--fs-52);
+    --font-size-dropdown: var(--fs-14);
 
-      --font-size-h1: var(--fs-52);
-      --font-size-dropdown: var(--fs-14);
-       
-      --font-size-search: var(--fs-20);
-      --font-size-city: var(--fs-28);
-      --font-size-date: var(--fs-18);
-      --font-size-temp: var(--fs-96);
-      --font-size-panel-title: var(--fs-18);
-      --font-size-panel-value: var(--fs-32);
-      --font-size-forecast-title: var(--fs-20);
-      --font-size-forecast-day: var(--fs-18);
-      --font-size-forecast-temp: var(--fs-16);
-      --font-size-forecast-dropdown: var(--fs-16);
-      --font-size-forecast-hour: var(--fs-20);
-      
-      
+    --font-size-search: var(--fs-20);
+    --font-size-city: var(--fs-28);
+    --font-size-date: var(--fs-18);
+    --font-size-temp: var(--fs-96);
+    --font-size-panel-title: var(--fs-18);
+    --font-size-panel-value: var(--fs-32);
+    --font-size-forecast-title: var(--fs-20);
+    --font-size-forecast-day: var(--fs-18);
+    --font-size-forecast-temp: var(--fs-16);
+    --font-size-forecast-dropdown: var(--fs-16);
+    --font-size-forecast-hour: var(--fs-20);
 
-      /* 
+    
+
+    /* 
 
       @media (width >= calc(700 / 16 * 1rem)) {
       --font-size-dropdown: var(--fs-16);
     }
       
       */
-     
-      
-
-
   }
 
   *,
   *::before,
   *::after {
-      box-sizing: borderbox;
+
+
+    /*
+     box-sizing: borderbox;
+     */
   }
 
   /* 
@@ -140,9 +140,12 @@ Example:
  of space. With this code, it remains exactly 
  wide. 
   */
-  
+
   * {
-    margin: 0;
+
+    /*
+     margin: 0; 
+     */
   }
 
   /* 
@@ -152,19 +155,27 @@ Example:
 margin: 0;: Sets the outer spacing (margin) for all sides (top, right, bottom, left) to 
  pixels. 
   */
-  
+
   img {
+
+/* 
     max-width: 100%;
+     */
   }
   body {
-      font-family: "DM Sans", Arial, Helvetica, sans-serif;
-      font-weight: 500;
-      background-color: var(--color-main-bg);
-      color: var(--color-text-light);
-      /* Above white text */
-      line-height: 1.2;
-      padding-block-end: 80px;
-      /* 
+
+
+    /* 
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    background-color: var(--color-main-bg);
+    color: var(--color-text-light); */
+    /*
+     Above white text */
+    /*
+     line-height: 1.2;
+    padding-block-end: 80px; */
+    /* 
       padding
       Block vs. Inline
 
@@ -175,20 +186,23 @@ This corresponds to the axis of the text flow. English, for example, has a left-
 Block
 This is the axis perpendicular to the text flow axis. For English, the block axis is vertical. For Chinese it would be horizontal
       */
-      
   }
 
   h1 {
-      font-family: "Bricolage Grotesque", Arial, Helvetica, sans-serif;
+    font-family: "Bricolage Grotesque", Arial, Helvetica, sans-serif;
   }
 
   input,
   button,
   textarea,
   select {
+
+    /* 
     font: inherit;
     max-width: 100%;
-    border: none;
+    border: none; 
+    */
+
   }
 
   /* 
@@ -203,26 +217,36 @@ This is the axis perpendicular to the text flow axis. For English, the block axi
   This removes any default borders that browsers apply to form elements. This gives the developer a clean slate to apply custom borders using other CSS properties if desired, or to simply have borderless inputs that blend into the design. The default focus outline (the glow that appears when you click on a form field) can be removed using the outline: none; property, although this is generally not recommended for accessibility reasons. 
   */
 
-
-
   /* wrapper centers the display, emply space in the left and right */
 
   .wrapper {
+
+/*     
     display: grid;
-    
+
     grid-template-columns: 1fr calc(100% - 32px) 1fr;
 
-   @media (width >= calc(700 / 16 * 1rem)) {
-      grid-template-columns: 1fr min(calc(100% - 48px), calc(1216 / 16 * 1rem)) 1fr;
-    }
-    /* calc(100% - 48) is for tablet size
+    @media (width >= calc(700 / 16 * 1rem)) {
+      grid-template-columns: 1fr min(
+          calc(100% - 48px),
+          calc(1216 / 16 * 1rem)
+        ) 1fr;
+    } 
+        */
+    /*
+     calc(100% - 48) is for tablet size
     
     */
 
+    /* 
     > * {
       grid-column: 2;
     }
-    /*  Any direct child element of .wrapper is forced into the second column (the center content column), effectively centering all content.  */
+ */
+
+    /*  
+    Any direct child element of .wrapper is forced into the second column 
+    (the center content column), effectively centering all content.  */
   
   }
 
@@ -244,31 +268,33 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
   
   */
 
-
- 
   .dropdown {
+
+/* 
     background-color: var(--color-panel-bg-dark);
     color: var(--color-text-light);
     border: 0;
     font-size: var(--font-size-dropdown);
     border-radius: 8px;
+     */
   }
 
-
- 
-
   .main {
+
+/* 
     display: grid;
     row-gap: 32px;
+     */
   }
 
   .block {
+
+/* 
     background-color: var(--color-panel-bg-dark);
     border: 1px solid var(--color-panel-border);
     border-radius: 12px;
+     */
   }
- 
-
 
   /* 
   The CSS code .main { display: grid; row-gap: 32px; } means that the HTML element with the class main is set up as a CSS grid container, and there will be a vertical space of 32 pixels between its rows. 
@@ -287,27 +313,24 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
 
   */
   .dashboard {
+
+/* 
     display: grid;
     gap: 32px;
     grid-template-areas:
       "current"
       "daily"
       "hourly";
-    
 
     @media (width >= calc(1000 / 16 * 1rem)) {
       grid-template-columns: repeat(3, 1fr);
-      grid-template-areas: 
-      "current current hourly"
-      "daily daily hourly"
-      
-      ;
+      grid-template-areas:
+        "current current hourly"
+        "daily daily hourly";
     }
+*/
 
   }
-
-
-  
 
   /* 
   
@@ -328,81 +351,91 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
     }
   }
   */
-
-
-
-
-
 }
 
 @layer component {
-    .header {
+  .header {
+    .header_container {
 
-        .header_container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-block-start: 16px;
-        }
+/* 
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block-start: 16px;
+       */
+    }
 
-        .header_homelink {}
+    .header_homelink {
+    }
 
-        .header_logo {
-            width: calc(137 / 16 * 1rem);
+    .header_logo {
+/*       
+      width: calc(137 / 16 * 1rem);
 
-            @media (width >= calc(700 / 16 * 1rem)) {
-              width: calc(197 / 16 * 1rem);
-            }
-        }
-        .header_dropdown {
-            max-width: 10ch;
-            background-image: url("/assets/images/icon-units.svg");
-            background-repeat: no-repeat;
-            background-position: 16px center;
-            padding: 12px 40px;
-            
+      @media (width >= calc(700 / 16 * 1rem)) {
+        width: calc(197 / 16 * 1rem);
+      }
+       */
+    }
+    .header_dropdown {
 
-        } 
+/*     
+      max-width: 10ch;
+      background-image: url("/assets/images/icon-units.svg");
+      background-repeat: no-repeat;
+      background-position: 16px center;
+      padding: 12px 40px; 
+      */
 
-        /* 
+    }
+
+    /* 
         10ch: The ch unit stands for "character" unit. 
         It is specifically defined as the horizontal advance 
         measure of the "0" (zero) glyph. 
         */
+  }
+
+  .hero {
+    .hero_container {
+
+/* 
+      display: grid;
+      justify-items: center;
+      padding-block-start: 48px; 
+      */
 
     }
 
+    .hero_title {
 
-    .hero {
-      .hero_container {
-        display: grid;
-        justify-items: center;
-        padding-block-start: 48px;
-      }
-
-      .hero_title {
-        font-size: var(--font-size-h1);
-        margin-block-end: 48px;
-        text-align: center;
-        line-height: 1.2;
-
-        @media (width < calc(1000 / 16 * 1rem)) {
-        max-width: 15ch;
-      }
-
-      }
-
-      .hero_search {
-        display: grid;
-        gap: 12px 16px;
-        width: 100%;
-        max-width: calc(656 / 16 * 1rem);
-        
-
-        @media (width >= calc(700 / 16 * 1rem)) {
-        grid-template-columns: 1fr auto ;
-      }
 /* 
+      font-size: var(--font-size-h1);
+      margin-block-end: 48px;
+      text-align: center;
+      line-height: 1.2;
+
+      @media (width < calc(1000 / 16 * 1rem)) {
+        max-width: 15ch;
+      } */
+
+
+    }
+
+    .hero_search {
+
+/* 
+      display: grid;
+      gap: 12px 16px;
+      width: 100%;
+      max-width: calc(656 / 16 * 1rem);
+
+      @media (width >= calc(700 / 16 * 1rem)) {
+        grid-template-columns: 1fr auto;
+      } */
+
+
+      /* 
         @media (width >= calc(700 / 16 * 1rem)) {
         grid-template-columns: 1fr auto;
       }
@@ -414,221 +447,253 @@ grid-template-columns:
 auto: 
     The second column is sized automatically based on the width of its content
          */
+    }
 
-      }
+    .hero_textbox {
 
-      
+/* 
+      background-image: url("/assets/images/icon-search.svg");
+      background-repeat: no-repeat;
+      background-position: 24px center;
+      background-color: var(--color-panel-bg-dark);
+      font-size: var(--font-size-search);
+      padding: 16px 20px 16px 60px;
+      color: var(--color-text-med-light);
+      border-radius: 12px;
 
-      .hero_textbox {
-        background-image: url("/assets/images/icon-search.svg");
-        background-repeat: no-repeat;
-        background-position: 24px center;
-        background-color: var(--color-panel-bg-dark);
-        font-size: var(--font-size-search);
-        padding: 16px 20px 16px 60px;
-        color: var(--color-text-med-light);
-        border-radius: 12px;
-        
-
-
-        &:focus {
+      &:focus {
         outline: 2px solid var(--color-text-med-light);
-      } 
+      } */
 
-        /* 
+      /* 
         &:focus {
         outline: 2px solid var(--color-text-med-light);
       } 
         */
+    }
 
+    .hero_button {
 
-        
+/* 
+      background-color: var(--c-blue-500);
+      border-radius: 12px;
+      font-size: var(--font-size-search);
+      color: var(--color-text-light);
+      padding: 16px 24px;
+      transition: background-color 120ms ease-in-out;
+
+      &:hover {
+        background-color: var(--color-button-bg-hover);
+        cursor: pointer;
       }
-
-      .hero_button {
-        background-color: var(--c-blue-500);
-        border-radius: 12px;
-        font-size: var(--font-size-search);
-        color: var(--color-text-light);
-        padding: 16px 24px;
-        transition: background-color 120ms ease-in-out;
-
-        &:hover {
-          background-color: var(--color-button-bg-hover);
-          cursor: pointer;
-        }
-      }
+ */
 
     }
 
-    .currently {
-      grid-area: current;
+  }
 
-      /* 
+  .currently {
+
+
+
+    /* 
       grid-area: current;
       */
-      .currently_container {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        margin-block-end: 20px;
-        padding: 40px 24px;
-        background-image: url("/assets/images/bg-today-small.svg");
-        background-repeat: no-repeat;
-        background-color: var(--c-blue-700);
-        background-size: cover;
-        background-position: center bottom;
-        border-radius: 20px;
-        overflow: clip;
+    .currently_container {
 
+/* 
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-block-end: 20px;
+      padding: 40px 24px;
+      background-image: url("/assets/images/bg-today-small.svg");
+      background-repeat: no-repeat;
+      background-color: var(--c-blue-700);
+      background-size: cover;
+      background-position: center bottom;
+      border-radius: 20px;
+      overflow: clip;
 
-
-        @media (width >= calc(700 / 16 * 1rem)) {
-        
+      @media (width >= calc(700 / 16 * 1rem)) {
         background-image: url("/assets/images/bg-today-large.svg");
         padding-block: 83px;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        
-        }
-
-      }
-
-      .current_location {
-        text-align: center;
-      }
-      .current_city {
-        font-size: var(--font-size-city);
-        font-weight: 700;
-        margin-block-end: 12px;
-      }
-      .current_date {
-        font-size: var(--font-size-date);
-        color: var(--color-text-med-light);
-      }
-      .current_info {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-      }
-      .current_icon {
-        width: 120px;
-        height: auto;
-      }
-      .current_temp {
-        font-size: var(--font-size-temp);
-        line-height: 1;
-        letter-spacing: -2%;
-        font-weight: 600;
-        font-style: italic;
-      }
-      .current_conditions {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
+      } */
 
 
-        @media (width >= calc(700 / 16 * 1rem)) {
-          grid-template-columns: repeat(4, 1fr);
-        }
+    }
 
-        
+    .current_location {
 
-        /* 
+/* 
+      text-align: center; */
+
+    }
+    .current_city {
+
+/* 
+      font-size: var(--font-size-city);
+      font-weight: 700;
+      margin-block-end: 12px;
+ */
+
+    }
+    .current_date {
+
+/* 
+      font-size: var(--font-size-date);
+      color: var(--color-text-med-light);
+ */
+
+    }
+    .current_info {
+
+/* 
+      display: flex;
+      align-items: center;
+      gap: 20px;
+ */
+
+    }
+    .current_icon {
+
+/* 
+      width: 120px;
+      height: auto; */
+
+    }
+    .current_temp {
+
+/* 
+      font-size: var(--font-size-temp);
+      line-height: 1;
+      letter-spacing: -2%;
+      font-weight: 600;
+      font-style: italic; */
+
+
+    }
+    .current_conditions {
+
+/* 
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+
+      @media (width >= calc(700 / 16 * 1rem)) {
+        grid-template-columns: repeat(4, 1fr);
+      } */
+
+      /* 
         @media (width >= calc(700 / 16 * 1rem)) {
         grid-template-columns: repeat(4, 1fr);
       }
         */
 
-      }
-      /* 
-      
-      */
-      .current_condition {
-        padding: 20px;
-      }
-      .current_condition-title {
-        font-size: var(--font-size-panel-title);
-        color: var(--color-text-med-light);
-        margin-block-end: 24px;
-      }
-      .current_condition-value {
-        font-size: var(--font-size-panel-value);
-        font-weight: 300;
 
-      }
+    }
+    
+    .current_condition {
+/* 
+      padding: 20px; */
+
+
+    }
+    .current_condition-title {
+
+/* 
+      font-size: var(--font-size-panel-title);
+      color: var(--color-text-med-light);
+      margin-block-end: 24px;
+ */
+
+    }
+    .current_condition-value {
+
+/* 
+      font-size: var(--font-size-panel-value);
+      font-weight: 300; */
+
+
     }
 
 
+  }
 
+  .daily {
 
+    /* grid-area: daily; */
 
+    .daily_title {
 
+/* 
+      font-size: var(--font-size-forecast-title);
+      margin-block-end: 20px;
+ */
 
+    }
+    .daily_container {
 
-    .daily {
+/* 
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      min-height: calc(166 / 16 * 1rem);
 
-      grid-area: daily;
+      @media (width >= calc(700 / 16 * 1rem)) {
+        grid-template-columns: repeat(7, 1fr);
+      } */
 
-      /* grid-area: daily; */
-
-      .daily_title {
-        font-size: var(--font-size-forecast-title);
-        margin-block-end: 20px;
-      }
-      .daily_container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-        min-height: calc(166 / 16 * 1rem);
-
-        @media (width >= calc(700 / 16 * 1rem)) {
-          grid-template-columns: repeat(7, 1fr);
-        }
-
-        /*
+      /*
         @media (width >= calc(700 / 16 * 1rem)) {
         grid-template-columns: repeat(7, 1fr);
       }
         */
+    }
+    .daily_day {
 
-      }
-      .daily_day {
-        display: grid;
-        justify-items: center;
-        gap: 16px;
-        padding: 16px 10px; 
-        text-align: center;
+/*       
+      display: grid;
+      justify-items: center;
+      gap: 16px;
+      padding: 16px 10px;
+      text-align: center; */
 
-        /* 
+      /* 
         
         display: grid;
       justify-items: center;
       gap: 16px;
       padding: 16px 10px;
       text-align: center;*/
-      }
-      .daily_day-title {
-        font-size: var(--font-size-forecast-day);
-      }
-      .daily_day-icon {
-        width: 60px;
-        height: auto;
+    }
+    .daily_day-title {
 
 /* 
+      font-size: var(--font-size-forecast-day); */
+
+    }
+    .daily_day-icon {
+
+
+      /* 
         width: 60px;
         height: auto;
          */
-      }
-      .daily_day-temp {
-        font-size: var(--font-size-forecast-temp);
-        display: flex;
-        justify-content: space-between;
-        justify-self: stretch;
+    }
+    .daily_day-temp {
 
+/* 
+      font-size: var(--font-size-forecast-temp);
+      display: flex;
+      justify-content: space-between;
+      justify-self: stretch; */
 
-        /* justify-self: stretch;
+      /*
+       justify-self: stretch;
 
          used in Grid Layouts that forces an individual grid item to expand and fill
           the entire width (inline axis) of its assigned grid area
@@ -636,44 +701,43 @@ auto:
         display: flex;
         justify-content: space-between;
         font-size: var(--font-size-forecast-temp); */
-      }
-      .daily_day-high {}
-
-      .daily_day-low {
-        color: var(--color-text-med-light);
-      }
+    }
+    .daily_day-high {
 
     }
 
+    .daily_day-low {
+
+/* 
+      color: var(--color-text-med-light); */
+
+    }
+  }
+
+  .hourly {
 
 
 
-
-    .hourly {
-
-      grid-area: hourly;
-      position: relative;
-
-      /* 
+    /* 
       grid-area: hourly;
       position: relative;
       */
-      .hourly_container {
-        background-color: var(--color-panel-bg-dark);
-        border-radius: 20px;
-        padding: 20px 16px;
-        max-height: 60vh;
-        overflow-y: scroll;
+    .hourly_container {
 
-        @media (width >= calc(1000 / 16 * 1rem)) {
+/* 
+      background-color: var(--color-panel-bg-dark);
+      border-radius: 20px;
+      padding: 20px 16px;
+      max-height: 60vh;
+      overflow-y: scroll;
+
+      @media (width >= calc(1000 / 16 * 1rem)) {
         position: absolute;
         height: 100%;
         max-height: none;
-      } 
+      } */
 
-
-
-        /* 
+      /* 
       background-color: var(--color-panel-bg-dark);
       border-radius: 20px;
       padding: 20px 16px;
@@ -688,69 +752,52 @@ auto:
 
 
          */
+    }
+    .hourly_header {
 
-      }
-      .hourly_header {
-        display: flex;
-        gap: 40px;
-        justify-content: space-between;
-        align-items: center;
-        margin-block-end: 16px;
+/* 
+      display: flex;
+      gap: 40px;
+      justify-content: space-between;
+      align-items: center;
+      margin-block-end: 16px; */
 
-        /* 
+      /* 
       display: flex;
       gap: 40px;
       justify-content: space-between;
       align-items: center;
       margin-block-end: 16px;
         */
-      }
-      .hourly_title {
-        font-size: var(--font-size-forecast-title);
-        font-weight: 600;
-
-        /* 
+    }
+    .hourly_title {
+      
+      /* 
         font-size: var(--font-size-forecast-title);
       font-weight: 600;
         */
-      }
-      .hourly_day-dropdown {
-        background-color: var(--color-panel-bg-med);
-        width: auto;
-        padding: 8px 16px;
+    }
+    .hourly_day-dropdown {
 
+   
 
-
-        /*
+      /*
       background-color: var(--color-panel-bg-med);
       width: auto;
       padding: 8px 16px;
         */
+    }
+    .hourly_forecast-hours-info {
 
-      }
-      .hourly_forecast-hours-info {
-        display: grid;
-        gap: 16px;
-
-        /* 
+   
+      /* 
       display: grid;
       gap: 16px;
        */
-      }
-      .hourly_forecast-hour {
-        display: grid;
-        grid-template-columns: auto auto 1fr;
-        gap: 8px;
-        align-items: center;
-        background-color: var(--color-panel-bg-med);
-        border: 1px solid var(--color-panel-border);
-        padding: 10px 16px 10px 12px;
-        border-radius: 8px;
-        min-height: calc(60 / 16 * 1rem);
-
-        
-
-        /* 
+    }
+    .hourly_forecast-hour {
+      
+      /* 
       display: grid;
       grid-template-columns: auto auto 1fr;
       gap: 8px;
@@ -761,9 +808,9 @@ auto:
       border-radius: 8px;
       min-height: calc(60 / 16 * 1rem);
         */
-      }
+    }
 
-      /* 
+    /* 
       grid-template-columns: auto auto 1fr;
       The two auto columns will be flexible enough to accommodate their content's size.
 The 1fr column acts as the "greedy" column, expanding to fill the rest of the container's width, ensuring no empty space remains in the row (unless gaps are added).
@@ -771,37 +818,27 @@ This creates a common layout pattern where the content-heavy columns are sized a
 
 
       */
-      .hourly_forecast-hour-icon {
-        width: 40px;
-        height: auto;
+    .hourly_forecast-hour-icon {
 
-        /* 
+      /* 
       width: 40px;
       height: auto;
         */
-      }
-      .hourly_forecast-hour-time {
-        font-size: var(--font-size-forecast-hour);
-      }
-      .hourly_forecast-hour-temp {
-        font-size: var(--font-size-forecast-temp);
-        justify-self: end;
-        
+    }
+    .hourly_forecast-hour-time {
 
-        /*
+/* 
+      font-size: var(--font-size-forecast-hour);
+       */
+    }
+    .hourly_forecast-hour-temp {
+      
+
+      /*
       font-size: var(--font-size-forecast-temp);
       justify-self: end; 
         */
-
-      }
-      
     }
-
-
-
-
-
-
-
-
+  }
 }
+
