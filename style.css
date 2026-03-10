@@ -318,6 +318,8 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
   }
 
   .main {
+    display: grid;
+    row-gap: 32px;
 
 /* 
     display: grid;
@@ -354,6 +356,20 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
 
   */
   .dashboard {
+    display: grid;
+    gap: 32px;
+    grid-template-areas: 
+      "current"
+      "daily"
+      "hourly";
+
+    @media (width >= calc(1000 / 16 * 1rem)) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: 
+        "current current hourly"
+        "daily daily hourly"
+      ;
+    }
 
 /* 
     display: grid;
@@ -594,6 +610,8 @@ auto:
 
   .currently {
 
+    grid-area: current;
+
 
 
     /* 
@@ -782,6 +800,7 @@ auto:
   }
 
   .daily {
+    grid-area: daily;
 
     /* grid-area: daily; */
 
@@ -897,6 +916,7 @@ auto:
   }
 
   .hourly {
+    grid-area: hourly;
 
 
 
