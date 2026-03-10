@@ -786,6 +786,8 @@ auto:
     /* grid-area: daily; */
 
     .daily_title {
+      font-size: var(--font-size-forecast-title);
+      margin-block-end: 20px
 
 /* 
       font-size: var(--font-size-forecast-title);
@@ -794,6 +796,15 @@ auto:
 
     }
     .daily_container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      min-height: calc(166 / 16 * 1rem);
+      
+
+      @media (width >= calc(700 / 16 * 1rem)) {
+        grid-template-columns: repeat(7, 1fr);
+      } 
 
 /* 
       display: grid;
@@ -812,6 +823,11 @@ auto:
         */
     }
     .daily_day {
+      display: grid;
+      justify-items: center;
+      gap: 16px;
+      padding: 16px 10px;
+      text-align: center;
 
 /*       
       display: grid;
@@ -829,12 +845,15 @@ auto:
       text-align: center;*/
     }
     .daily_day-title {
+      font-size: var(--font-size-forecast-day);
 
 /* 
       font-size: var(--font-size-forecast-day); */
 
     }
     .daily_day-icon {
+      width: 60px;
+      height: auto;
 
 
       /* 
@@ -843,6 +862,10 @@ auto:
          */
     }
     .daily_day-temp {
+      font-size: var(--font-size-forecast-temp);
+      display: flex;
+      justify-content: space-between;
+      justify-self: stretch;
 
 /* 
       font-size: var(--font-size-forecast-temp);
@@ -865,6 +888,7 @@ auto:
     }
 
     .daily_day-low {
+      color: var(--color-text-med-light);
 
 /* 
       color: var(--color-text-med-light); */
