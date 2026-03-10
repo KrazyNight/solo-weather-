@@ -120,6 +120,7 @@
   *,
   *::before,
   *::after {
+    box-sizing: border-box;
 
 
     /*
@@ -128,25 +129,21 @@
   }
 
   /* 
-  why is this not working?
-  so annoying
-  I'm so weak, lmao!
-  let begin to work
-  okay'
-
-
-  helloe
-  hi 
-  yuo can me
-
+  
 
   
-  This forces "padding and borders" to be included "within" an element's specified "width and height".
+  This forces "padding and borders" to be included "within" an element's
+   specified "width and height".
+
   * (Universal Selector): Targets every single HTML element on the page.
 
-  *::before, *::after: Ensures that "pseudo-elements" (content generated via CSS) also adopt this behavior, which is not automatically inherited.
+  *::before, *::after: 
+  Ensures that "pseudo-elements" (content generated via CSS) 
+  also adopt this behavior, which is not automatically inherited.
    
-  box-sizing: border-box: Changes the default box model to a more intuitive model where the size you set is the final size of the element on screen. 
+  box-sizing: border-box: 
+  Changes the default box model to a more 
+  intuitive model where the size you set is the final size of the element on screen. 
   
 Example:
  Without this, a div set to width: 100px; padding: 10px; actually takes up 
@@ -155,6 +152,7 @@ Example:
   */
 
   * {
+    margin: 0;
 
     /*
      margin: 0; 
@@ -170,12 +168,17 @@ margin: 0;: Sets the outer spacing (margin) for all sides (top, right, bottom, l
   */
 
   img {
+    max-width: 100%;
 
 /* 
     max-width: 100%;
      */
   }
   body {
+    background-color: var(--color-main-bg);
+    color: var(--color-text-light);
+    padding-block-end: 80px;
+
 
 
     /* 
@@ -209,6 +212,9 @@ This is the axis perpendicular to the text flow axis. For English, the block axi
   button,
   textarea,
   select {
+    font: inherit;
+    max-width: 100%;
+    border: none;
 
     /* 
     font: inherit;
@@ -282,6 +288,11 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
   */
 
   .dropdown {
+    background-color: var(--color-panel-bg-dark);
+    color: var(--color-text-light);
+    border: 0;
+    font-size: var(--font-size-dropdown);
+    border-radius: 8px;
 
 /* 
     background-color: var(--color-panel-bg-dark);
@@ -369,6 +380,10 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
 @layer component {
   .header {
     .header_container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block-start: 16px;
 
 /* 
       display: flex;
@@ -382,6 +397,12 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
     }
 
     .header_logo {
+      width: calc(137 / 16 * 1rem);
+
+      @media (width >= calc(700 / 16 * 1rem)) {
+        width: calc(197 / 16 * 1rem);
+      }
+
 /*       
       width: calc(137 / 16 * 1rem);
 
@@ -391,6 +412,13 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
        */
     }
     .header_dropdown {
+      max-width: 10ch;
+      background-image: url("/assets/images/icon-units.svg");
+      background-repeat: no-repeat;
+      background-position: 16px center;
+      padding: 12px 40px;
+
+
 
 /*     
       max-width: 10ch;
@@ -411,6 +439,9 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
 
   .hero {
     .hero_container {
+      display: grid;
+      justify-items: center;
+      padding-block-start: 48px;
 
 /* 
       display: grid;
@@ -421,6 +452,10 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
     }
 
     .hero_title {
+      font-size: var(--font-size-h1);
+      margin-block-end: 48px;
+      text-align: center;
+
 
 /* 
       font-size: var(--font-size-h1);
@@ -436,6 +471,12 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
     }
 
     .hero_search {
+      display: grid;
+      gap: 12px 16px;
+      width: 100%;
+      max-width: calc(656 / 16 * 1rem);
+
+      
 
 /* 
       display: grid;
@@ -463,6 +504,14 @@ auto:
     }
 
     .hero_textbox {
+      background-image: url("/assets/images/icon-search.svg");
+      background-repeat: no-repeat;
+      background-position: 24px center;
+      background-color: var(--color-panel-bg-dark);
+      font-size: var(--font-size-search);
+      padding: 16px 20px 16px 60px;
+      color: var(--color-text-med-light);
+      border-radius: 12px;
 
 /* 
       background-image: url("/assets/images/icon-search.svg");
@@ -486,6 +535,19 @@ auto:
     }
 
     .hero_button {
+      background-color: var(--c-blue-500);
+      border-radius: 12px;
+      font-size: var(--font-size-search);
+      color: var(--color-text-light);
+      padding: 16px 24px;
+      
+      transition: background-color 120ms ease-in-out;
+
+      &:hover {
+        background-color: var(--color-button-bg-hover);
+        cursor: pointer;
+
+      }
 
 /* 
       background-color: var(--c-blue-500);
@@ -499,6 +561,9 @@ auto:
         background-color: var(--color-button-bg-hover);
         cursor: pointer;
       }
+
+      &:hover {
+      cursor: pointer;
  */
 
     }
