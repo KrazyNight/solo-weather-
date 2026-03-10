@@ -905,7 +905,19 @@ auto:
       position: relative;
       */
     .hourly_container {
+      background-color: var(--color-panel-bg-dark);
+      border-radius: 20px;
+      padding: 20px 16px;
+      max-height: 60vh;
+      overflow-y: scroll;
 
+      @media (width >= calc(1000 / 16 * 1rem)) {
+        position: absolute;
+        height: 100%;
+        max-height: none;
+
+        
+      }
 /* 
       background-color: var(--color-panel-bg-dark);
       border-radius: 20px;
@@ -917,7 +929,8 @@ auto:
         position: absolute;
         height: 100%;
         max-height: none;
-      } */
+      } 
+        */
 
       /* 
       background-color: var(--color-panel-bg-dark);
@@ -934,8 +947,14 @@ auto:
 
 
          */
+    
     }
     .hourly_header {
+      display: flex;
+      gap: 40px;
+      justify-content: space-between;
+      align-items: center;
+      margin-block-end: 16px;
 
 /* 
       display: flex;
@@ -953,6 +972,9 @@ auto:
         */
     }
     .hourly_title {
+
+      font-size: var(--font-size-forecast-title);
+      font-weight: 600;
       
       /* 
         font-size: var(--font-size-forecast-title);
@@ -960,6 +982,9 @@ auto:
         */
     }
     .hourly_day-dropdown {
+      background-color: var(--color-panel-bg-med);
+      width: auto;
+      padding: 8px 16px;
 
    
 
@@ -970,6 +995,9 @@ auto:
         */
     }
     .hourly_forecast-hours-info {
+      display: grid;
+      gap: 16px;
+
 
    
       /* 
@@ -978,6 +1006,19 @@ auto:
        */
     }
     .hourly_forecast-hour {
+      display: grid;
+      grid-template-columns: auto auto 1fr;
+      gap: 8px;
+      align-items: center;
+      padding: 10px 16px 10px 12px;
+      background-color: var(--color-panel-bg-med);
+      border: 1px solid var(--color-panel-border);
+      border-radius: 8px;
+      min-height: calc(60 / 16 *1rem);
+
+
+      
+      
       
       /* 
       display: grid;
@@ -1001,6 +1042,8 @@ This creates a common layout pattern where the content-heavy columns are sized a
 
       */
     .hourly_forecast-hour-icon {
+      width: 40px;
+      height: auto;
 
       /* 
       width: 40px;
@@ -1008,12 +1051,15 @@ This creates a common layout pattern where the content-heavy columns are sized a
         */
     }
     .hourly_forecast-hour-time {
+      font-size: var(--font-size-forecast-hour);
 
 /* 
       font-size: var(--font-size-forecast-hour);
        */
     }
     .hourly_forecast-hour-temp {
+      font-size: var(--font-size-forecast-temp);
+      justify-self: end; 
       
 
       /*
