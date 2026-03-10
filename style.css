@@ -75,12 +75,7 @@
     --color-button-bg: var(--c-blue-500);
     --color-button-bg-hover: var(--c-blue-700);
 
-    /* Q1:  */
-    /* font-size:  */
-    /* what's the meaning of ?:  calc( # / 16 * 1 rem) */
-    /* ans: ? */
-    /* 16px = 1rem  */
-    /* use rem because it's easier to change brower base font size */
+    
 
     --fs-96: calc(96 / 16 * 1rem);
     --fs-52: calc(52 / 16 * 1rem);
@@ -106,6 +101,7 @@
     --font-size-forecast-dropdown: var(--fs-16);
     --font-size-forecast-hour: var(--fs-20);
 
+
     
 
     /* 
@@ -120,7 +116,7 @@
   *,
   *::before,
   *::after {
-    box-sizing: border-box;
+  
 
 
     /*
@@ -152,7 +148,7 @@ Example:
   */
 
   * {
-    margin: 0;
+ 
 
     /*
      margin: 0; 
@@ -168,17 +164,14 @@ margin: 0;: Sets the outer spacing (margin) for all sides (top, right, bottom, l
   */
 
   img {
-    max-width: 100%;
+
 
 /* 
     max-width: 100%;
      */
   }
   body {
-    background-color: var(--color-main-bg);
-    color: var(--color-text-light);
-    padding-block-end: 80px;
-
+ 
 
 
     /* 
@@ -212,9 +205,7 @@ This is the axis perpendicular to the text flow axis. For English, the block axi
   button,
   textarea,
   select {
-    font: inherit;
-    max-width: 100%;
-    border: none;
+
 
     /* 
     font: inherit;
@@ -239,19 +230,7 @@ This is the axis perpendicular to the text flow axis. For English, the block axi
   /* wrapper centers the display, emply space in the left and right */
 
   .wrapper {
-    display: grid;
-    grid-template-columns: 1fr calc(100% - 32px) 1fr;
 
-    @media (width >= calc(700 / 16 * 1rem)) {
-      grid-template-columns: 1fr min(
-        calc(1216 / 16 * 1rem), 
-        calc(100% - 48px)
-        ) 1fr;
-    }
-
-    > * {
-      grid-column: 2;
-    }
 
 
 /*     
@@ -302,11 +281,7 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
   */
 
   .dropdown {
-    background-color: var(--color-panel-bg-dark);
-    color: var(--color-text-light);
-    border: 0;
-    font-size: var(--font-size-dropdown);
-    border-radius: 8px;
+    
 
 /* 
     background-color: var(--color-panel-bg-dark);
@@ -318,9 +293,7 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
   }
 
   .main {
-    display: grid;
-    row-gap: 32px;
-
+  
 /* 
     display: grid;
     row-gap: 32px;
@@ -328,9 +301,6 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
   }
 
   .block {
-    background-color: var(--color-panel-bg-dark);
-    border: 1px solid var(--color-panel-border);
-    border-radius: 12px;
 
 /* 
     background-color: var(--color-panel-bg-dark);
@@ -356,20 +326,7 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
 
   */
   .dashboard {
-    display: grid;
-    gap: 32px;
-    grid-template-areas: 
-      "current"
-      "daily"
-      "hourly";
-
-    @media (width >= calc(1000 / 16 * 1rem)) {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-areas: 
-        "current current hourly"
-        "daily daily hourly"
-      ;
-    }
+    
 
 /* 
     display: grid;
@@ -413,10 +370,7 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
 @layer component {
   .header {
     .header_container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-block-start: 16px;
+      
 
 /* 
       display: flex;
@@ -430,11 +384,7 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
     }
 
     .header_logo {
-      width: calc(137 / 16 * 1rem);
-
-      @media (width >= calc(700 / 16 * 1rem)) {
-        width: calc(197 / 16 * 1rem);
-      }
+     
 
 /*       
       width: calc(137 / 16 * 1rem);
@@ -445,12 +395,8 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
        */
     }
     .header_dropdown {
-      max-width: 10ch;
-      background-image: url("/assets/images/icon-units.svg");
-      background-repeat: no-repeat;
-      background-position: 16px center;
-      padding: 12px 40px;
 
+     
 
 
 /*     
@@ -472,9 +418,7 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
 
   .hero {
     .hero_container {
-      display: grid;
-      justify-items: center;
-      padding-block-start: 48px;
+      
 
 /* 
       display: grid;
@@ -485,10 +429,8 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
     }
 
     .hero_title {
-      font-size: var(--font-size-h1);
-      margin-block-end: 48px;
-      text-align: center;
 
+    
 
 /* 
       font-size: var(--font-size-h1);
@@ -504,15 +446,7 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
     }
 
     .hero_search {
-      display: grid;
-      gap: 12px 16px;
-      width: 100%;
-      max-width: calc(656 / 16 * 1rem);
-
-
-      @media (width >= calc(700 / 16 * 1rem)) {
-        grid-template-columns: 1fr auto;
-      }
+     
 
       
 
@@ -542,14 +476,7 @@ auto:
     }
 
     .hero_textbox {
-      background-image: url("/assets/images/icon-search.svg");
-      background-repeat: no-repeat;
-      background-position: 24px center;
-      background-color: var(--color-panel-bg-dark);
-      font-size: var(--font-size-search);
-      padding: 16px 20px 16px 60px;
-      color: var(--color-text-med-light);
-      border-radius: 12px;
+      
 
 /* 
       background-image: url("/assets/images/icon-search.svg");
@@ -573,19 +500,7 @@ auto:
     }
 
     .hero_button {
-      background-color: var(--c-blue-500);
-      border-radius: 12px;
-      font-size: var(--font-size-search);
-      color: var(--color-text-light);
-      padding: 16px 24px;
-
-      transition: background-color 120ms ease-in-out;
-
-      &:hover {
-        background-color: var(--color-button-bg-hover);
-        cursor: pointer;
-
-      }
+      
 
 /* 
       background-color: var(--c-blue-500);
@@ -610,7 +525,6 @@ auto:
 
   .currently {
 
-    grid-area: current;
 
 
 
@@ -618,33 +532,8 @@ auto:
       grid-area: current;
       */
     .currently_container {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-block-end: 20px;
-      padding: 40px 24px;
-      background-image: url("/assets/images/bg-today-small.svg");
-      background-repeat: no-repeat;
-      background-color: var(--c-blue-700);
-      background-size:cover;
-      background-position: center bottom;
-      border-radius: 20px;
-      overflow: clip;
-
-      @media (width >= calc(700 / 16 * 1rem)) {
-        background-image: url("/assets/images/bg-today-large.svg");
-        padding-block: 83px;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
 
 
-
-      
-      
-      
- 
 
 /* 
       display: flex;
@@ -672,16 +561,13 @@ auto:
     }
 
     .current_location {
-      text-align: center;
 
 /* 
       text-align: center; */
 
     }
     .current_city {
-      font-size: var(--font-size-city);
-      font-weight: 700;
-      margin-block-end: 12px;
+
 
 /* 
       font-size: var(--font-size-city);
@@ -691,8 +577,7 @@ auto:
 
     }
     .current_date {
-      font-size: var(--font-size-date);
-      color: var(--color-text-med-light);
+      
 
 /* 
       font-size: var(--font-size-date);
@@ -701,9 +586,8 @@ auto:
 
     }
     .current_info {
-      display: flex;
-      align-items: center;
-      gap: 20px;
+      
+
 /* 
       display: flex;
       align-items: center;
@@ -712,8 +596,7 @@ auto:
 
     }
     .current_icon {
-      width: 120px;
-      height: auto;
+      
 
 /* 
       width: 120px;
@@ -721,11 +604,6 @@ auto:
 
     }
     .current_temp {
-      font-size: var(--font-size-temp);
-      line-height: 1;
-      letter-spacing: -2%;
-      font-weight: 600;
-      font-style: italic
       
       
 
@@ -740,15 +618,9 @@ auto:
     }
 
     .current_conditions {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
 
-      @media (width >= calc(700 / 16 * 1rem)) {
-        grid-template-columns: repeat(4, 1fr);
-      } 
 
-/* yes
+/* 
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 16px;
@@ -763,11 +635,10 @@ auto:
       }
         */
 
-
     }
     
     .current_condition {
-      padding: 20px;
+     
 /* 
       padding: 20px; */
 
@@ -775,9 +646,7 @@ auto:
     }
     .current_condition-title {
 
-      font-size: var(--font-size-panel-title);
-      color: var(--color-text-med-light);
-      margin-block-end: 24px;
+      
 /* 
       font-size: var(--font-size-panel-title);
       color: var(--color-text-med-light);
@@ -787,8 +656,7 @@ auto:
     }
     .current_condition-value {
 
-      font-size: var(--font-size-panel-value);
-      font-weight: 300
+      
 /* 
       font-size: var(--font-size-panel-value);
       font-weight: 300; */
@@ -800,13 +668,11 @@ auto:
   }
 
   .daily {
-    grid-area: daily;
 
     /* grid-area: daily; */
 
     .daily_title {
-      font-size: var(--font-size-forecast-title);
-      margin-block-end: 20px
+      
 
 /* 
       font-size: var(--font-size-forecast-title);
@@ -815,15 +681,7 @@ auto:
 
     }
     .daily_container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      min-height: calc(166 / 16 * 1rem);
       
-
-      @media (width >= calc(700 / 16 * 1rem)) {
-        grid-template-columns: repeat(7, 1fr);
-      } 
 
 /* 
       display: grid;
@@ -835,18 +693,10 @@ auto:
         grid-template-columns: repeat(7, 1fr);
       } */
 
-      /*
-        @media (width >= calc(700 / 16 * 1rem)) {
-        grid-template-columns: repeat(7, 1fr);
-      }
-        */
+      
     }
     .daily_day {
-      display: grid;
-      justify-items: center;
-      gap: 16px;
-      padding: 16px 10px;
-      text-align: center;
+      
 
 /*       
       display: grid;
@@ -854,25 +704,17 @@ auto:
       gap: 16px;
       padding: 16px 10px;
       text-align: center; */
-
-      /* 
-        
-        display: grid;
-      justify-items: center;
-      gap: 16px;
-      padding: 16px 10px;
-      text-align: center;*/
+    
     }
     .daily_day-title {
-      font-size: var(--font-size-forecast-day);
+      
 
 /* 
       font-size: var(--font-size-forecast-day); */
 
     }
     .daily_day-icon {
-      width: 60px;
-      height: auto;
+      
 
 
       /* 
@@ -881,10 +723,7 @@ auto:
          */
     }
     .daily_day-temp {
-      font-size: var(--font-size-forecast-temp);
-      display: flex;
-      justify-content: space-between;
-      justify-self: stretch;
+      
 
 /* 
       font-size: var(--font-size-forecast-temp);
@@ -907,7 +746,6 @@ auto:
     }
 
     .daily_day-low {
-      color: var(--color-text-med-light);
 
 /* 
       color: var(--color-text-med-light); */
@@ -916,7 +754,8 @@ auto:
   }
 
   .hourly {
-    grid-area: hourly;
+    
+    
 
 
 
@@ -925,19 +764,7 @@ auto:
       position: relative;
       */
     .hourly_container {
-      background-color: var(--color-panel-bg-dark);
-      border-radius: 20px;
-      padding: 20px 16px;
-      max-height: 60vh;
-      overflow-y: scroll;
-
-      @media (width >= calc(1000 / 16 * 1rem)) {
-        position: absolute;
-        height: 100%;
-        max-height: none;
-
-        
-      }
+      
 /* 
       background-color: var(--color-panel-bg-dark);
       border-radius: 20px;
@@ -952,29 +779,11 @@ auto:
       } 
         */
 
-      /* 
-      background-color: var(--color-panel-bg-dark);
-      border-radius: 20px;
-      padding: 20px 16px;
-      max-height: 60vh;
-      overflow-y: scroll;
-
-      @media (width >= calc(1000 / 16 * 1rem)) {
-        position: absolute;
-        height: 100%;
-        max-height: none;
-      }
-
-
-         */
+      
     
     }
     .hourly_header {
-      display: flex;
-      gap: 40px;
-      justify-content: space-between;
-      align-items: center;
-      margin-block-end: 16px;
+      
 
 /* 
       display: flex;
@@ -983,18 +792,11 @@ auto:
       align-items: center;
       margin-block-end: 16px; */
 
-      /* 
-      display: flex;
-      gap: 40px;
-      justify-content: space-between;
-      align-items: center;
-      margin-block-end: 16px;
-        */
+      
     }
     .hourly_title {
 
-      font-size: var(--font-size-forecast-title);
-      font-weight: 600;
+      
       
       /* 
         font-size: var(--font-size-forecast-title);
@@ -1002,9 +804,6 @@ auto:
         */
     }
     .hourly_day-dropdown {
-      background-color: var(--color-panel-bg-med);
-      width: auto;
-      padding: 8px 16px;
 
    
 
@@ -1015,8 +814,7 @@ auto:
         */
     }
     .hourly_forecast-hours-info {
-      display: grid;
-      gap: 16px;
+      
 
 
    
@@ -1026,17 +824,6 @@ auto:
        */
     }
     .hourly_forecast-hour {
-      display: grid;
-      grid-template-columns: auto auto 1fr;
-      gap: 8px;
-      align-items: center;
-      padding: 10px 16px 10px 12px;
-      background-color: var(--color-panel-bg-med);
-      border: 1px solid var(--color-panel-border);
-      border-radius: 8px;
-      min-height: calc(60 / 16 *1rem);
-
-
       
       
       
@@ -1062,8 +849,7 @@ This creates a common layout pattern where the content-heavy columns are sized a
 
       */
     .hourly_forecast-hour-icon {
-      width: 40px;
-      height: auto;
+      
 
       /* 
       width: 40px;
@@ -1071,15 +857,14 @@ This creates a common layout pattern where the content-heavy columns are sized a
         */
     }
     .hourly_forecast-hour-time {
-      font-size: var(--font-size-forecast-hour);
+      
 
 /* 
       font-size: var(--font-size-forecast-hour);
        */
     }
     .hourly_forecast-hour-temp {
-      font-size: var(--font-size-forecast-temp);
-      justify-self: end; 
+       
       
 
       /*
