@@ -116,6 +116,7 @@
   *,
   *::before,
   *::after {
+    box-sizing: border-box;
   
 
 
@@ -148,6 +149,7 @@ Example:
   */
 
   * {
+    margin: 0;
  
 
     /*
@@ -164,6 +166,7 @@ margin: 0;: Sets the outer spacing (margin) for all sides (top, right, bottom, l
   */
 
   img {
+    max-width: 100%;
 
 
 /* 
@@ -171,6 +174,8 @@ margin: 0;: Sets the outer spacing (margin) for all sides (top, right, bottom, l
      */
   }
   body {
+    background-color: var(--color-main-bg);
+    color: var(--color-text-light);
  
 
 
@@ -205,6 +210,9 @@ This is the axis perpendicular to the text flow axis. For English, the block axi
   button,
   textarea,
   select {
+    font: inherit;
+    max-width: 100%;
+    border: none;
 
 
     /* 
@@ -230,6 +238,22 @@ This is the axis perpendicular to the text flow axis. For English, the block axi
   /* wrapper centers the display, emply space in the left and right */
 
   .wrapper {
+    display: grid;
+    grid-template-columns: 1fr calc(100% - 32px) 1fr;
+
+    @media (width >= calc(700 / 16 * 1rem)) {
+      grid-template-columns: 1fr 
+      min(
+        calc(100% - 48px), 
+        calc(1216 / 16 * 1rem)
+        )
+      1fr;
+    }
+
+
+    > * {
+      grid-column: 2;
+    }
 
 
 
@@ -281,6 +305,11 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
   */
 
   .dropdown {
+    background-color: var(--color-panel-bg-dark);
+    color: var(--color-text-light);
+    font-size: var(--font-size-dropdown);
+    border: 0;
+    border-radius: 8px;
     
 
 /* 
@@ -370,6 +399,12 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
 @layer component {
   .header {
     .header_container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+
+
       
 
 /* 
@@ -384,6 +419,12 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
     }
 
     .header_logo {
+      width: calc(137 / 16 * 1rem);
+
+      @media (width >= calc(700 / 16 * 1rem)) {
+        width: calc(197 / 16 * 1rem);
+      }
+
      
 
 /*       
@@ -395,6 +436,11 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
        */
     }
     .header_dropdown {
+      padding: 12px 40px;
+      background-image: url("assets/images/icon-units.svg");
+      background-repeat: no-repeat;
+      background-position: 16px center;
+      max-width: 10ch;
 
      
 
