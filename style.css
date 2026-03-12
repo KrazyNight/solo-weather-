@@ -338,6 +338,9 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
   }
 
   .block {
+    background-color: var(--color-panel-bg-dark);
+    border: 1px solid var(--color-panel-border);
+    border-radius: 12px;
 
 /* 
     background-color: var(--color-panel-bg-dark);
@@ -649,19 +652,20 @@ auto:
       background-repeat: no-repeat;
       background-color: var(--c-blue-700);
       background-size: cover;
-      background-position: center bottom;
       border-radius: 20px;
       overflow: clip;
+      background-position: center bottom;
       padding: 40px 24px;
       margin-block-end: 20px;
 
-      
-      
+      @media (width >= calc(700 / 16 * 1rem)) {
+        background-image: url("/assets/images/bg-today-large.svg");
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: 83px;
 
-      
-
-
-
+      }
 
 
 /* 
@@ -690,12 +694,16 @@ auto:
     }
 
     .current_location {
+      text-align: center;
 
 /* 
       text-align: center; */
 
     }
     .current_city {
+      font-size: var(--font-size-city);
+      font-weight: 700;
+      margin-block-end: 12px;
 
 
 /* 
@@ -706,6 +714,8 @@ auto:
 
     }
     .current_date {
+      font-size: var(--font-size-date);
+      color: var(--color-text-med-light);
       
 
 /* 
@@ -715,6 +725,12 @@ auto:
 
     }
     .current_info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      
+      
+      
       
 
 /* 
@@ -725,6 +741,9 @@ auto:
 
     }
     .current_icon {
+      width: 120px;
+      height: auto;
+      
       
 
 /* 
@@ -733,6 +752,11 @@ auto:
 
     }
     .current_temp {
+      font-size: var(--font-size-temp);
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: -2%;
+      line-height: 1;
       
       
 
@@ -747,6 +771,13 @@ auto:
     }
 
     .current_conditions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+
+      @media (width >= calc(700 / 16 * 1rem)) {
+        grid-template-columns: repeat(4, 1fr);
+      }
 
 
 /* 
@@ -767,6 +798,8 @@ auto:
     }
     
     .current_condition {
+      padding: 21px;
+      
      
 /* 
       padding: 20px; */
@@ -774,6 +807,9 @@ auto:
 
     }
     .current_condition-title {
+      font-size: var(--font-size-panel-title);
+      color: var(--color-text-med-light);
+      margin-block-end: 24px;
 
       
 /* 
@@ -784,6 +820,8 @@ auto:
 
     }
     .current_condition-value {
+      font-size: var(--font-size-panel-value);
+      font-weight: 300;
 
       
 /* 
@@ -801,7 +839,8 @@ auto:
     /* grid-area: daily; */
 
     .daily_title {
-      
+      font-size: var(--font-size-forecast-title);
+      margin-block-end: 20px;
 
 /* 
       font-size: var(--font-size-forecast-title);
@@ -810,6 +849,14 @@ auto:
 
     }
     .daily_container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      min-height: calc(166 / 16 * 1rem);
+
+      @media (width >= calc(700 / 16 * 1rem)) {
+        grid-template-columns: repeat(7, 1fr);
+      }
       
 
 /* 
@@ -825,6 +872,11 @@ auto:
       
     }
     .daily_day {
+      display: grid;
+      justify-items: center;
+      gap: 16px;
+      padding: 16px 10px;
+      text-align: center;
       
 
 /*       
@@ -836,6 +888,7 @@ auto:
     
     }
     .daily_day-title {
+      font-size: var(--font-size-forecast-day)
       
 
 /* 
@@ -843,6 +896,8 @@ auto:
 
     }
     .daily_day-icon {
+      width: 60px;
+      height: auto;
       
 
 
@@ -852,6 +907,10 @@ auto:
          */
     }
     .daily_day-temp {
+      font-size: var(--font-size-forecast-temp);
+      display: flex;
+      justify-content: space-between;
+      justify-self: stretch;
       
 
 /* 
@@ -871,10 +930,12 @@ auto:
         font-size: var(--font-size-forecast-temp); */
     }
     .daily_day-high {
+      color: var(--color-text-med-light);
 
     }
 
     .daily_day-low {
+      color: var(--color-text-med-light);
 
 /* 
       color: var(--color-text-med-light); */
