@@ -327,6 +327,9 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
   }
 
   .main {
+    display: grid;
+    row-gap: 32px;
+    
   
 /* 
     display: grid;
@@ -511,13 +514,14 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
 
     .hero_search {
       display: grid;
-      gap: 12px 16px; 
+      gap: 12px 16px;
       width: 100%;
       max-width: calc(656 / 16 * 1rem);
 
-      @media (width >= calc(700 / 16 * 1rem)) {
+      @media (width >= calc(700 / 16 * 1rem )) {
         grid-template-columns: 1fr auto;
       }
+
 
 
      
@@ -561,18 +565,15 @@ auto:
     }
 
     .hero_textbox {
-      background-image: url("/assets/images/icon-search.svg");
+      background-color: var(--color-panel-bg-dark);
+      color: var(--color-text-med-light);
+      background-image: url("assets/images/icon-search.svg");
       background-repeat: no-repeat;
       background-position: 24px center;
-      background-color: var(--color-panel-bg-dark);
-      font-size: var(--font-size-search);
       padding: 16px 20px 16px 60px;
-      color: var(--color-text-med-light);
+      font-size: var(--font-size-search);
       border-radius: 12px;
 
-      &:focus {
-        outline: 2px solid var(--color-text-med-light);
-      }
       
 
 /* 
@@ -598,16 +599,18 @@ auto:
 
     .hero_button {
       background-color: var(--c-blue-500);
+      color: var(--color-text-light);
       border-radius: 12px;
       font-size: var(--font-size-search);
-      color: var(--color-text-light);
       padding: 16px 24px;
       transition: background-color 120ms ease-in-out;
-
+      
       &:hover {
         background-color: var(--color-button-bg-hover);
         cursor: pointer;
       }
+
+      
       
 
 /* 
@@ -640,6 +643,24 @@ auto:
       grid-area: current;
       */
     .currently_container {
+      display: flex;
+      flex-direction: column;
+      background-image: url("/assets/images/bg-today-small.svg");
+      background-repeat: no-repeat;
+      background-color: var(--c-blue-700);
+      background-size: cover;
+      background-position: center bottom;
+      border-radius: 20px;
+      overflow: clip;
+      padding: 40px 24px;
+      margin-block-end: 20px;
+
+      
+      
+
+      
+
+
 
 
 
