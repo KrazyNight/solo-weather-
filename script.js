@@ -6,8 +6,10 @@
 //  https://nominatim.openstreetmap.org/search?
 //  https://nominatim.openstreetmap.org/search?q=birmingham%2C+pilkington+avenue&format=jsonv2
 
+
 async function getData() {
   let search = "los angeles, ca"
+
   const url = `https://nominatim.openstreetmap.org/search?q=${search}&format=jsonv2`;
 
   try {
@@ -23,5 +25,4 @@ async function getData() {
   }
 }
 
-getData();
-
+getData()
