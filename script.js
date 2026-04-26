@@ -141,7 +141,7 @@
 
 
 
-//continue 
+//continue scary 
 const ddlUnits = document.querySelector("#ddlUnits");
 
 let cityName, countryName;
