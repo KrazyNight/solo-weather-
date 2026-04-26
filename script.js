@@ -141,8 +141,6 @@
 
 
 
-
-
 //continue 
 const ddlUnits = document.querySelector("#ddlUnits");
 
