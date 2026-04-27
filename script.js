@@ -11,6 +11,29 @@
 
 
 
+//hw: i want this code today's date
+//ex: Tuesday, Aug 5, 2025
+// I GOOGLED "javascript , I want to code the current date in this format, Tuesday, Aug 5, 2025"
+
+// const today = new Date();
+
+// const options = { 
+//   weekday: 'long', 
+//   year: 'numeric', 
+//   month: 'short', 
+//   day: 'numeric' 
+// };
+
+// const formattedDate = today.toLocaleDateString('en-US', options);
+
+// console.log(formattedDate); 
+// Output Example: "Tuesday, Aug 5, 2025"
+
+
+
+
+
+
 
 
 
@@ -140,8 +163,419 @@
 
 
 
-
+// step 2 solo: connecting web to code screen for current   (current complete)
+// (current complete)
+// (current complete)
+// (current complete)
+// (current complete)
+// (current complete)
+// (current complete)
+// (current complete)
+// (current complete)
+// (current complete)
+// (current complete)
 //continue scary 
+// const ddlUnits = document.querySelector("#ddlUnits");
+
+// const dvCityCountry = document.querySelector("#dvCityCountry");
+// const dvCurrDate = document.querySelector("#dvCurrDate");
+// const dvCurrTemp = document.querySelector("#dvCurrTemp");
+
+// const pFeelsLike = document.querySelector("#pFeelsLike");
+// const pHumidity = document.querySelector("#pHumidity");
+// const pWind = document.querySelector("#pWind");
+// const pPrecipitation = document.querySelector("#pPrecipitation");
+
+
+// let cityName, countryName;
+
+
+
+
+
+// async function getGeoData() {
+//   let search = "los angeles, ca"
+
+//   const url = `https://nominatim.openstreetmap.org/search?q=${search}&format=jsonv2&addressdetails=1`;
+
+//   try {
+//     const response = await fetch(url);
+//     if (!response.ok) {
+//       throw new Error(`Response status: ${response.status}`);
+//     }
+
+//     const result = await response.json();
+//     console.log(result);
+
+
+//     let lat = result[0].lat;
+//     let lon = result[0].lon;
+
+//     loadLocationData(result)
+//     getWeatherData(lat, lon);
+//   } catch (error) {
+//     console.error(error.message);
+//   }
+// }
+
+// function loadLocationData(locationData){
+//   let location = locationData[0].address;
+//   cityName = location.city;
+//   countryName = location.country_code.toUpperCase();
+
+
+//   const today = new Date();
+
+//   const dateOptions = { 
+//     weekday: 'long', 
+//     year: 'numeric', 
+//     month: 'short', 
+//     day: 'numeric' 
+//   };
+
+//   const formattedDate = today.toLocaleDateString('en-US', dateOptions);
+
+//   dvCityCountry.textContent = `${cityName}, ${countryName}`;
+//   dvCurrDate.textContent = formattedDate;
+
+//   //console.log(formattedDate); 
+//   //Output Example: "Tuesday, Aug 5, 2025"
+//   //console.log(cityName, countryName, formattedDate)
+
+// }
+
+
+// async function getWeatherData(lat, lon) {
+//   let tempUnit = "celsius";
+//   let windUnit = "kmh";
+//   let precipUnit = "mm";
+
+//   if (ddlUnits.value === "F") {
+//     tempUnit = "fahrenheit";
+//     windUnit = "mph";
+//     precipUnit = "inch";
+//   }
+
+
+//   const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=weather_code,temperature_2m_max,temperature_2m_min&hourly=temperature_2m,weather_code&current=temperature_2m,weather_code,relative_humidity_2m,apparent_temperature,wind_speed_10m,precipitation&past_days=0&forecast_days=7&wind_speed_unit=${windUnit}&temperature_unit=${tempUnit}&precipitation_unit=${precipUnit}`;
+
+//   try {
+//     const response = await fetch(url);
+//     if (!response.ok) {
+//       throw new Error(`Response status: ${response.status}`);
+//     }
+
+//     const result = await response.json();
+//     console.log(result);
+
+//     loadWeatherData(result); // why do I place this function here
+//   } catch (error) {
+//     console.error(error.message);
+//   }
+// }
+
+// function loadWeatherData(weatherData) {
+//   dvCurrTemp.textContent = Math.round(weatherData.current.temperature_2m);
+//   pFeelsLike.textContent = Math.round(weatherData.current.apparent_temperature);
+//   pHumidity.textContent = weatherData.current.relative_humidity_2m;
+//   pWind.textContent = `${weatherData.current.wind_speed_10m} ${weatherData.current_units.wind_speed_10m.replace("mp/h", "mph")}`;
+//   pPrecipitation.textContent = `${weatherData.current.precipitation} ${weatherData.current_units.precipitation.replace("inch", "in")}`;
+// };
+
+
+
+
+// getGeoData();
+
+
+
+//(current above complete)
+//(current above complete)
+//(current above complete)
+//(current above complete)
+//(current above complete)
+//(current above complete)
+//(current above complete)
+//(current above complete)
+//(current above complete)
+//(current above complete)
+//(current above complete)
+//(current above complete)
+//(current above complete)
+
+
+
+
+
+
+
+
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+// const ddlUnits = document.querySelector("#ddlUnits");
+
+// let cityName, countryName;
+
+
+
+
+
+// async function getGeoData() {
+//   let search = "los angeles, ca"
+
+//   const url = `https://nominatim.openstreetmap.org/search?q=${search}&format=jsonv2&addressdetails=1`;
+
+//   try {
+//     const response = await fetch(url);
+//     if (!response.ok) {
+//       throw new Error(`Response status: ${response.status}`);
+//     }
+
+//     const result = await response.json();
+//     console.log(result);
+
+
+//     let lat = result[0].lat;
+//     let lon = result[0].lon;
+
+//     loadLocationData(result)
+//     getWeatherData(lat, lon);
+//   } catch (error) {
+//     console.error(error.message);
+//   }
+// }
+
+// function loadLocationData(locationData){
+//   let location = locationData[0].address;
+//   cityName = location.city;
+//   countryName = location.country;
+
+//   console.log(cityName, countryName)
+
+// }
+
+
+// async function getWeatherData(lat, lon) {
+//   let tempUnit = "celsius";
+//   let windUnit = "kmh";
+//   let precipUnit = "mm";
+
+//   if (ddlUnits.value === "F") {
+//     tempUnit = "fahrenheit";
+//     windUnit = "mph";
+//     precipUnit = "inch";
+//   }
+
+
+//   const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=weather_code,temperature_2m_max,temperature_2m_min&hourly=temperature_2m,weather_code&current=temperature_2m,weather_code,relative_humidity_2m,apparent_temperature,wind_speed_10m,precipitation&past_days=0&forecast_days=7&wind_speed_unit=${windUnit}&temperature_unit=${tempUnit}&precipitation_unit=${precipUnit}`;
+
+//   try {
+//     const response = await fetch(url);
+//     if (!response.ok) {
+//       throw new Error(`Response status: ${response.status}`);
+//     }
+
+//     const result = await response.json();
+//     console.log(result);
+//   } catch (error) {
+//     console.error(error.message);
+//   }
+// }
+
+
+
+
+// getGeoData();
+
+
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+//example 2: template, do not change code
+
+
+
+
+
+
+
+
+//example 2: yes work on it, del afterwards, template above 
+//yes work on it, del afterwards, template above
+//yes work on it, del afterwards, template above
+//yes work on it, del afterwards, template above
+//yes work on it, del afterwards, template above
+//yes work on it, del afterwards, template above
+//yes work on it, del afterwards, template above
+//yes work on it, del afterwards, template above
+
+
+
+
+
+// const ddlUnits = document.querySelector("#ddlUnits");
+
+// let cityName, countryName;
+
+
+
+
+
+// async function getGeoData() {
+//   let search = "los angeles, ca"
+
+//   const url = `https://nominatim.openstreetmap.org/search?q=${search}&format=jsonv2&addressdetails=1`;
+
+//   try {
+//     const response = await fetch(url);
+//     if (!response.ok) {
+//       throw new Error(`Response status: ${response.status}`);
+//     }
+
+//     const result = await response.json();
+//     console.log(result);
+
+
+//     let lat = result[0].lat;
+//     let lon = result[0].lon;
+
+//     loadLocationData(result)
+//     getWeatherData(lat, lon);
+//   } catch (error) {
+//     console.error(error.message);
+//   }
+// }
+
+// function loadLocationData(locationData){
+//   let location = locationData[0].address;
+//   cityName = location.city;
+//   countryName = location.country;
+
+//   console.log(cityName, countryName)
+
+// }
+
+
+// async function getWeatherData(lat, lon) {
+//   let tempUnit = "celsius";
+//   let windUnit = "kmh";
+//   let precipUnit = "mm";
+
+//   if (ddlUnits.value === "F") {
+//     tempUnit = "fahrenheit";
+//     windUnit = "mph";
+//     precipUnit = "inch";
+//   }
+
+
+//   const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=weather_code,temperature_2m_max,temperature_2m_min&hourly=temperature_2m,weather_code&current=temperature_2m,weather_code,relative_humidity_2m,apparent_temperature,wind_speed_10m,precipitation&past_days=0&forecast_days=7&wind_speed_unit=${windUnit}&temperature_unit=${tempUnit}&precipitation_unit=${precipUnit}`;
+
+//   try {
+//     const response = await fetch(url);
+//     if (!response.ok) {
+//       throw new Error(`Response status: ${response.status}`);
+//     }
+
+//     const result = await response.json();
+//     console.log(result);
+//   } catch (error) {
+//     console.error(error.message);
+//   }
+// }
+
+
+
+
+// getGeoData();
+
+
+//yes work on it, del afterwards, template above 
+//yes work on it, del afterwards, template above 
+//yes work on it, del afterwards, template above 
+//yes work on it, del afterwards, template above 
+//yes work on it, del afterwards, template above 
+//yes work on it, del afterwards, template above 
+//yes work on it, del afterwards, template above 
+//yes work on it, del afterwards, template above 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//continue 
 const ddlUnits = document.querySelector("#ddlUnits");
 
 const dvCityCountry = document.querySelector("#dvCityCountry");
@@ -245,7 +679,7 @@ function loadWeatherData(weatherData) {
   dvCurrTemp.textContent = Math.round(weatherData.current.temperature_2m);
   pFeelsLike.textContent = Math.round(weatherData.current.apparent_temperature);
   pHumidity.textContent = weatherData.current.relative_humidity_2m;
-  pWind.textContent = `${weatherData.current.wind_speed_10m} ${weatherData.current_units.wind_speed_10m.replace("km/h", "kmh")}`;
+  pWind.textContent = `${weatherData.current.wind_speed_10m} ${weatherData.current_units.wind_speed_10m.replace("mp/h", "mph")}`;
   pPrecipitation.textContent = `${weatherData.current.precipitation} ${weatherData.current_units.precipitation.replace("inch", "in")}`;
 };
 
@@ -254,20 +688,3 @@ function loadWeatherData(weatherData) {
 
 getGeoData();
 
-//hw: i want this code today's date
-//ex: Tuesday, Aug 5, 2025
-// I GOOGLED "javascript , I want to code the current date in this format, Tuesday, Aug 5, 2025"
-
-// const today = new Date();
-
-// const options = { 
-//   weekday: 'long', 
-//   year: 'numeric', 
-//   month: 'short', 
-//   day: 'numeric' 
-// };
-
-// const formattedDate = today.toLocaleDateString('en-US', options);
-
-// console.log(formattedDate); 
-// Output Example: "Tuesday, Aug 5, 2025"
