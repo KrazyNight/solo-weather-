@@ -105,7 +105,7 @@
 
 
 
-// example 1 
+// example 1: del afterwards
 
 
 
@@ -144,6 +144,10 @@
 //continue scary 
 const ddlUnits = document.querySelector("#ddlUnits");
 
+const dvCityCountry = document.querySelector("#dvCityCountry");
+const dvCurrDate = document.querySelector("#dvCurrDate");
+const dvCurrTemp = document.querySelector("#dvCurrTemp");
+
 let cityName, countryName;
 
 
@@ -178,9 +182,26 @@ async function getGeoData() {
 function loadLocationData(locationData){
   let location = locationData[0].address;
   cityName = location.city;
-  countryName = location.country;
+  countryName = location.country_code.toUpperCase();
 
-  console.log(cityName, countryName)
+
+  const today = new Date();
+
+  const dateOptions = { 
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'short', 
+    day: 'numeric' 
+  };
+
+  const formattedDate = today.toLocaleDateString('en-US', dateOptions);
+
+  dvCityCountry.textContent = `${cityName}, ${countryName}`;
+  dvCurrDate.textContent = formattedDate;
+
+  //console.log(formattedDate); 
+  //Output Example: "Tuesday, Aug 5, 2025"
+  //console.log(cityName, countryName, formattedDate)
 
 }
 
@@ -216,3 +237,21 @@ async function getWeatherData(lat, lon) {
 
 
 getGeoData();
+
+//hw: i want this code today's date
+//ex: Tuesday, Aug 5, 2025
+// I GOOGLED "javascript , I want to code the current date in this format, Tuesday, Aug 5, 2025"
+
+// const today = new Date();
+
+// const options = { 
+//   weekday: 'long', 
+//   year: 'numeric', 
+//   month: 'short', 
+//   day: 'numeric' 
+// };
+
+// const formattedDate = today.toLocaleDateString('en-US', options);
+
+// console.log(formattedDate); 
+// Output Example: "Tuesday, Aug 5, 2025"
