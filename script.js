@@ -148,6 +148,12 @@ const dvCityCountry = document.querySelector("#dvCityCountry");
 const dvCurrDate = document.querySelector("#dvCurrDate");
 const dvCurrTemp = document.querySelector("#dvCurrTemp");
 
+const pFeelsLike = document.querySelector("#pFeelsLike");
+const pHumidity = document.querySelector("#pHumidity");
+const pWind = document.querySelector("#pWind");
+const pPrecipitation = document.querySelector("#pPrecipitation");
+
+
 let cityName, countryName;
 
 
@@ -228,10 +234,20 @@ async function getWeatherData(lat, lon) {
 
     const result = await response.json();
     console.log(result);
+
+    loadWeatherData(result); // why do I place this function here
   } catch (error) {
     console.error(error.message);
   }
 }
+
+function loadWeatherData(weatherData) {
+  dvCurrTemp.textContent = Math.round(weatherData.current.temperature_2m);
+  pFeelsLike.textContent = Math.round(weatherData.current.apparent_temperature);
+  pHumidity.textContent = weatherData.current.relative_humidity_2m;
+  pWind.textContent = `${weatherData.current.wind_speed_10m} ${weatherData.current_units.wind_speed_10m.replace("km/h", "kmh")}`;
+  pPrecipitation.textContent = `${weatherData.current.precipitation} ${weatherData.current_units.precipitation.replace("inch", "in")}`;
+};
 
 
 
