@@ -866,10 +866,11 @@ async function getWeatherData(lat, lon) {
     console.log(result);
 
     loadCurrentWeather(result); // why do I place this function here
+    loadDailyWeather(result);
   } catch (error) {
     console.error(error.message);
   }
-}
+};
 
 function loadCurrentWeather(weatherData) {
   dvCurrTemp.textContent = Math.round(weatherData.current.temperature_2m);
@@ -879,7 +880,66 @@ function loadCurrentWeather(weatherData) {
   pPrecipitation.textContent = `${weatherData.current.precipitation} ${weatherData.current_units.precipitation.replace("inch", "in")}`;
 };
 
-function getWeatherFileName(code) {
+
+function loadDailyWeather(weatherData){
+// create week loop 
+// get date; number 1
+// get dayOfWeek = mon, thu,  wed
+  let daily = weatherData.daily;
+
+  for (let i = 0; i < 7; i++) {
+    // Get the raw date string (e.g., "2026-04-28") => daily.time[i]
+    // 3. Create a Date object
+    let date= new Date(daily.time[i]);
+    // 4. Format to get the day of the week (e.g., "Mon")
+    let dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'short' });
+
+    // 5. Console.log the result
+    //console.log(dayOfWeek); // Output: "Tue", "Wed", etc.
+    //console.log(date); // Output: "2026-04-28"
+    
+    //access any of the 7 daily boxes 
+    let dvForecastDay = document.querySelector(`#dvForecastDay${i + 1}`);
+    //console.log(dvForecastDay)
+
+    let weatherCodeName = getWeatherCodeName(daily.weather_code[i]);
+    let dailyHigh = Math.round(daily.temperature_2m_max[i]) + "°";
+    let dailyLow = Math.round(daily.temperature_2m_min[i]) + "°";
+
+
+    //console.log("any of the "let" above");
+    // ex: 
+    //console.log(date)
+
+
+
+
+
+
+
+    
+
+
+
+
+  }
+};
+
+//console.log(getWeatherFileName(0))
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getWeatherCodeName(code) {
   // sunny - 0, 
   // partly-cloudy - 1,2
   // overcast - 3
@@ -928,7 +988,7 @@ function getWeatherFileName(code) {
 }
 
 
-//console.log(getWeatherFileName(1))
+//console.log(getWeatherCodeName(0))
 
 
 
