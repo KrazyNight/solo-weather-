@@ -323,6 +323,8 @@
 //example 2: template, do not change code
 //example 2: template, do not change code
 //example 2: template, do not change code
+
+
 // const ddlUnits = document.querySelector("#ddlUnits");
 
 // let cityName, countryName;
@@ -424,6 +426,8 @@
 
 
 //example 2: yes work on it, del afterwards, template above 
+
+
 //yes work on it, del afterwards, template above
 //yes work on it, del afterwards, template above
 //yes work on it, del afterwards, template above
@@ -431,6 +435,9 @@
 //yes work on it, del afterwards, template above
 //yes work on it, del afterwards, template above
 //yes work on it, del afterwards, template above
+
+
+
 
 
 
@@ -512,6 +519,11 @@
 // getGeoData();
 
 
+
+
+
+
+
 //yes work on it, del afterwards, template above 
 //yes work on it, del afterwards, template above 
 //yes work on it, del afterwards, template above 
@@ -586,6 +598,8 @@ const pFeelsLike = document.querySelector("#pFeelsLike");
 const pHumidity = document.querySelector("#pHumidity");
 const pWind = document.querySelector("#pWind");
 const pPrecipitation = document.querySelector("#pPrecipitation");
+
+
 
 
 let cityName, countryName;
@@ -686,5 +700,9 @@ function loadWeatherData(weatherData) {
 
 
 
+
+
 getGeoData();
+
+ddlUnits.addEventListener("change", getGeoData);
 
