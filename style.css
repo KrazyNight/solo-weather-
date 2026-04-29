@@ -447,8 +447,7 @@ Tablet/Desktop: Content stays centered but stops growing once it hits 1216px, wh
        */
     }
 
-    .header_homelink {
-    }
+    
 
     .header_logo {
       width: calc(137 / 16 * 1rem);
@@ -956,10 +955,7 @@ auto:
         justify-content: space-between;
         font-size: var(--font-size-forecast-temp); */
     }
-    .daily_day-high {
-      color: var(--color-text-med-light);
 
-    }
 
     .daily_day-low {
       color: var(--color-text-med-light);

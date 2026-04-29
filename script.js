@@ -910,25 +910,63 @@ function loadDailyWeather(weatherData){
     //console.log("any of the "let" above");
     // ex: 
     //console.log(date)
+    while (dvForecastDay.firstChild) {
+      dvForecastDay.removeChild(dvForecastDay.firstChild);
+    }
 
 
 
 
 
+    addDailyElement("p", "daily_day-title", dayOfWeek, "", dvForecastDay, "afterbegin");
+    addDailyElement("img", "daily_day-icon", "", weatherCodeName, dvForecastDay, "beforeend");
+    addDailyElement("div", "daily_day-temp", "", "", dvForecastDay, "beforeend");
 
-
-    
-
+    let dvDailyTemps = document.querySelector(`#dvForecastDay${i + 1} .daily_day-temp`);
+    addDailyElement("p", "daily__day-high", dailyHigh, "", dvDailyTemps, "afterbegin");
+    addDailyElement("p", "daily__day-low", dailyLow, "", dvDailyTemps, "beforeend");
 
 
 
   }
 };
 
-//console.log(getWeatherFileName(0))
+// function addDailyElement(tag, className, content, weatherCodeName, parentElement, position) {
+//   const newElement = document.createElement(tag);
+//   newElement.setAttribute("class", className);
+//   if (content !== "") {
+//     const newContent = document.createTextNode(content);
+//     newElement.appendChild(newContent);
+//   }
+//   if (tag === "img") {
+//     newElement.setAttribute("src", `/assets/images/icon-${weatherCodeName}.webp`);
+//     newElement.setAttribute("alt", weatherCodeName);
+//     newElement.setAttribute("width", "320");
+//     newElement.setAttribute("height", "320");
+//   }
+//   parentElement.insertAdjacentElement(position, newElement);
+// }
 
 
 
+function addDailyElement(tag, className, content, weatherCodeName, parentElement, position) {
+  const newElement = document.createElement(tag);
+  if (className) newElement.className = className;
+
+  if (content) {
+    newElement.textContent = content; // Simpler than createTextNode
+  }
+
+  if (tag === "img" && weatherCodeName) {
+    newElement.src = `/assets/images/icon-${weatherCodeName}.webp`;
+    newElement.alt = `Weather condition: ${weatherCodeName}`;
+    newElement.width = 60;
+    newElement.height = 60;
+  }
+
+  parentElement.insertAdjacentElement(position, newElement);
+  return newElement; // Useful if you need to reference it immediately after
+}
 
 
 
@@ -980,9 +1018,9 @@ function getWeatherCodeName(code) {
     99: "storm",
   };
 
-  let fileName = `icon-${weatherCodes[code]}.webp`;
+  //let fileName = `icon-${weatherCodes[code]}.webp`;
 
-  return fileName;
+  return weatherCodes[code];
   
   
 }
