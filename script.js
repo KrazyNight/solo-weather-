@@ -1178,9 +1178,9 @@ function loadDailyWeather(weatherData){
 //x access all 7 daily boxes 
 //x access the day: 1/1/2011
 //x access day of the week: mon
-// acess the icon
-// access high temp
-// access low temp 
+//x acess the icon
+//x access high temp
+//x access low temp 
 //
 
 let daily = weatherData.daily;
@@ -1193,9 +1193,26 @@ for (let i = 0; i < 7; i++) {
   let dvForecastDay = document.querySelector(`#dvForecastDay${i + 1}`);
   //console.log(date);
   let weatherCodeName = getWeatherCodeName(daily.weather_code[i]);
+  //console.log(weatherCodeName);
   let dailyHigh = Math.round(daily.temperature_2m_max[i]) + "°";
+  //console.log(dailyHigh);
   let dailyLow = Math.round(daily.temperature_2m_min[i]) + "°";
+
+
+  // while (dvForecastDay.firstChild) {
+  //     dvForecastDay.removeChild(dvForecastDay.firstChild);
+  // }
   
+
+
+
+    // createDailyElements("p", "daily_day-title", dayOfWeek, "", dvForecastDay, "afterbegin");
+    // createDailyElements("img", "daily_day-icon", "", weatherCodeName, dvForecastDay, "beforeend");
+    // createDailyElements("div", "daily_day-temp", "", "", dvForecastDay, "beforeend");
+
+    // let dvDailyTemps = document.querySelector(`#dvForecastDay${i + 1} .daily_day-temp`);
+    // createDailyElements("p", "daily__day-high", dailyHigh, "", dvDailyTemps, "afterbegin");
+    // createDailyElements("p", "daily__day-low", dailyLow, "", dvDailyTemps, "beforeend");
   
 
 }
@@ -1203,6 +1220,30 @@ for (let i = 0; i < 7; i++) {
 //console.log(date);
 
 };
+
+function createDailyElements() {
+
+}
+
+// function addDailyElement(tag, className, content, weatherCodeName, parentElement, position) {
+//   const newElement = document.createElement(tag);
+//   if (className) newElement.className = className;
+
+//   if (content) {
+//     newElement.textContent = content; // Simpler than createTextNode
+//   }
+
+//   if (tag === "img" && weatherCodeName) {
+//     newElement.src = `/assets/images/icon-${weatherCodeName}.webp`;
+//     newElement.alt = `Weather condition: ${weatherCodeName}`;
+//     newElement.width = 60;
+//     newElement.height = 60;
+//   }
+
+//   parentElement.insertAdjacentElement(position, newElement);
+//   return newElement; // Useful if you need to reference it immediately after
+// }
+
 
 
 
@@ -1240,10 +1281,7 @@ function getWeatherCodeName(code){
     99: "storm",
   };
   
-
   let fileName = `icon-${weatherCodes[code]}.webp`;
-
-
 
   return weatherCodes[code];
   //return fileName;
