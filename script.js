@@ -1221,17 +1221,47 @@ for (let i = 0; i < 7; i++) {
 
 };
 
-function createDailyElements() {
+function createDailyElements() {};
 
-}
 
-// function addDailyElement(tag, className, content, weatherCodeName, parentElement, position) {
+
+// function createDailyElements(tag, className, content, weatherCodeName, parentElement, position) {
 //   const newElement = document.createElement(tag);
 //   if (className) newElement.className = className;
 
+
+
+//   //explaining above
+//   // 1.The "Truthiness" Check (if (className))
+//   // In JavaScript, an if statement doesn't just check for true or false. It checks if a value is "truthy."
+
+
+//   // If className is a string (like "btn-primary"), it evaluates to true, and the code runs.
+
+//   // If className is empty (""), null, or undefined, it evaluates to false, and the code is skipped. 
+//   // This prevents the code from accidentally setting an empty or "null" class on your HTML element.2.
+
+//   //  2. The Assignment (newElement.className = className)
+//   // newElement: This is likely an HTML element created earlier in the code
+//   //  (e.g., using document.createElement).
+//   // 
+//   // .className: This is the standard JavaScript property used to set the "class" attribute 
+//   // of an HTML element.
+//   // 
+//   // = className: This assigns the string stored in your variable to the element
+//   // 
+//   // The "Long" Version 
+//   // If you wrote this out fully, it would look like this:
+//   //
+//   // javascript
+//   // if  (className !== "" && className !== null && className !== undefined) {
+//   // newElement.className = className;
+//   // }
+
 //   if (content) {
-//     newElement.textContent = content; // Simpler than createTextNode
+//     newElement.textContent = content;
 //   }
+
 
 //   if (tag === "img" && weatherCodeName) {
 //     newElement.src = `/assets/images/icon-${weatherCodeName}.webp`;
@@ -1239,10 +1269,10 @@ function createDailyElements() {
 //     newElement.width = 60;
 //     newElement.height = 60;
 //   }
-
 //   parentElement.insertAdjacentElement(position, newElement);
 //   return newElement; // Useful if you need to reference it immediately after
-// }
+
+// };
 
 
 
