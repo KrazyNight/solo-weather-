@@ -1179,6 +1179,7 @@ async function getWeatherData(lat, lon) {
 
     loadCurrentWeather(result); // why do I place this function here
     loadDailyWeather(result);
+    loadHourlyWeather(result)
   } catch (error) {
     console.error(error.message);
   }
@@ -1294,9 +1295,99 @@ function createDailyElements(tag, className, content, weatherCodeName, parentEle
   return newElement;
 };
 
+function createHourlyElements(tag, className, content, weatherCodeName, parentElement, position) {
+  const newElement = document.createElement(tag);
+  if (className) {
+    newElement.className = className;
+  };
+  if (content) {
+    newElement.textContent = content;
+  };
+
+  if (tag === "img" && weatherCodeName) {
+    newElement.src = `assets/images/icon-${weatherCodeName}.webp`;
+    newElement.alt = `Weather Condition: ${weatherCodeName}`;
+    newElement.width = 60;
+    newElement.height = 60;
+  };
+  parentElement.insertAdjacentElement(position, newElement);
+  return newElement;
+};
+
+function loadHourlyWeather(weatherData) {
+  let hourly = weatherData.hourly;
+  //loop through 24hrs , 368/24hours  = 7 days 
+  // icon weatheCodeName
+  //time by hour, get AM And PM
+  // temperature_2m, 
+
+}
 
 
 
+
+
+
+
+function loadHourlyForecast() {
+  //console.log("loadHourlyForecast()");
+  let dayIndex = parseInt(ddlDay.value, 10);
+  //parseInt(...)
+  // It looks at the string (like "12") and turns it into an actual number (12).
+  //, 10: This is the radix.
+
+  //radix:
+  // 2; Binary: Radix 2 (Digits 0, 1)
+  //10;  Decimal: Radix 10 (Digits 0-9)
+
+  //let dayIndex = parseInt(ddlDay.value, 10);
+  //  Gets the selected day ( 0 for today, 1 for tomorrow) from a dropdown list (ddlDay).
+  // ex: ddlDay: 0: Monday, 1: Tuesday, 2: Wednday, etc...
+   
+
+  //console.log(`Day ${dayIndex + 1}`);
+  let firstHour = 24 * dayIndex;
+  let lastHour = 24 * (dayIndex + 1) - 1;
+  let weatherCodes = weatherData.hourly.weather_code;
+  let temps = weatherData.hourly.temperature_2m;
+  let hours = weatherData.hourly.time;
+  let id = 1;
+
+  for (let h = firstHour; h <= lastHour; h++) {
+    // console.log(`hour = ${h}`);
+    let weatherCodeName = getWeatherCodeName(weatherCodes[h]);
+    let temp = Math.round(temps[h]) + "°";
+    let hour = new Date(hours[h]).toLocaleString("en-US", { hour: "numeric", hour12: true });
+    let dvForecastHour = document.querySelector(`#dvForecastHour${id}`);
+
+    while (dvForecastHour.firstChild) {
+      dvForecastHour.removeChild(dvForecastHour.firstChild);
+    }
+
+    // console.log(hour, weatherCodeName, temp);
+
+    // console.log(`#dvForecastHour${id}`);
+    addDailyElement("img", "hourly__hour-icon", "", weatherCodeName, dvForecastHour, "afterbegin");
+    addDailyElement("p", "hourly__hour-time", hour, "", dvForecastHour, "beforeend");
+    addDailyElement("p", "hourly__hour-temp", temp, "", dvForecastHour, "beforeend");
+
+    id++;
+  }
+}
+
+
+//function loadHourlyForecast
+
+//function getHours() {
+//   for (let h = 0; h <= 23; h++) {
+//     console.log(h);
+//   }
+// }
+
+
+
+
+//function populateDayOfWeek() ---- no clue what this is 
 
 
 
