@@ -1316,7 +1316,12 @@ function createHourlyElements(tag, className, content, weatherCodeName, parentEl
 
 function loadHourlyWeather(weatherData) {
   let hourly = weatherData.hourly;
-  //loop through 24hrs , 368/24hours  = 7 days 
+  let weatherCodes = hourly.weather_code;
+  let temps = hourly.temperature_2m;
+  let hours = hourly.time;
+  //console.log()
+
+  //loop through 24hrs , 168/24hours  = 7 days 
   // icon weatheCodeName
   //time by hour, get AM And PM
   // temperature_2m, 
@@ -1331,7 +1336,14 @@ function loadHourlyWeather(weatherData) {
 
 function loadHourlyForecast() {
   //console.log("loadHourlyForecast()");
+
+
   let dayIndex = parseInt(ddlDay.value, 10);
+  //console.log(`Day ${dayIndex + 1}`);
+
+
+
+
   //parseInt(...)
   // It looks at the string (like "12") and turns it into an actual number (12).
   //, 10: This is the radix.
@@ -1343,18 +1355,32 @@ function loadHourlyForecast() {
   //let dayIndex = parseInt(ddlDay.value, 10);
   //  Gets the selected day ( 0 for today, 1 for tomorrow) from a dropdown list (ddlDay).
   // ex: ddlDay: 0: Monday, 1: Tuesday, 2: Wednday, etc...
-   
+
 
   //console.log(`Day ${dayIndex + 1}`);
+
   let firstHour = 24 * dayIndex;
-  let lastHour = 24 * (dayIndex + 1) - 1;
+  let lastHour = 24 * (dayIndex + 1) - 1; 
+  // make dayIndex = 0
+  //so dayIndex can only be = 0,1,2,3,4,5,6
+  //access the first hr of the day, Mon, dayIndex 
+
+
+  //accessing the hours of a day, 
+  //0: 0-23
+  //1:24-47
+  //dayIndex: hours being aceess of a day
+  //: Calculates the index range within the hourly data array (0-23 for Day 1, 24-47 for Day 2, etc.).
+
   let weatherCodes = weatherData.hourly.weather_code;
   let temps = weatherData.hourly.temperature_2m;
   let hours = weatherData.hourly.time;
+
   let id = 1;
 
   for (let h = firstHour; h <= lastHour; h++) {
     // console.log(`hour = ${h}`);
+
     let weatherCodeName = getWeatherCodeName(weatherCodes[h]);
     let temp = Math.round(temps[h]) + "°";
     let hour = new Date(hours[h]).toLocaleString("en-US", { hour: "numeric", hour12: true });
@@ -1378,6 +1404,9 @@ function loadHourlyForecast() {
 
 //function loadHourlyForecast
 
+
+
+
 //function getHours() {
 //   for (let h = 0; h <= 23; h++) {
 //     console.log(h);
@@ -1388,6 +1417,43 @@ function loadHourlyForecast() {
 
 
 //function populateDayOfWeek() ---- no clue what this is 
+
+
+
+// function populateDayOfWeek() {
+//   let currDate = new Date();
+//   let currDay;
+
+//   for (i = 0; i < 7; i++) {
+//     currDay = new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(currDate);
+//     const newOption = document.createElement("option");
+//     const dayOfWeek = document.createTextNode(currDay);
+
+//     newOption.setAttribute("class", "hourly__select-day");
+//     newOption.setAttribute("value", i);
+//     newOption.appendChild(dayOfWeek);
+
+//     ddlDay.insertAdjacentElement("beforeend", newOption);
+
+//     currDate.setDate(currDate.getDate() + 1);
+//   }
+
+//   console.log(ddlDay);
+// }
+
+// populateDayOfWeek();
+// //getGeoData();
+
+// ddlDay.addEventListener("change", loadHourlyForecast);
+
+// btnSearch.addEventListener("click", getGeoData);
+// ddlUnits.addEventListener("change", getGeoData);
+
+
+
+
+
+
 
 
 
