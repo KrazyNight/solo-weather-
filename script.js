@@ -1202,26 +1202,79 @@ for (let i = 0; i < 7; i++) {
   // while (dvForecastDay.firstChild) {
   //     dvForecastDay.removeChild(dvForecastDay.firstChild);
   // }
-  
+  while (dvForecastDay.firstChild) {
+    dvForecastDay.removeChild(dvForecastDay.firstChild);
+  }
 
 
+  createDailyElements(
+    "p",
+    "daily_day-title",
+    dayOfWeek,
+    "",
+    dvForecastDay,
+    "afterbegin"
+  );
+  createDailyElements(
+    "img",
+    "daily_day-icon",
+    "",
+    weatherCodeName,
+    dvForecastDay,
+    "beforeend",
 
-    // createDailyElements("p", "daily_day-title", dayOfWeek, "", dvForecastDay, "afterbegin");
-    // createDailyElements("img", "daily_day-icon", "", weatherCodeName, dvForecastDay, "beforeend");
-    // createDailyElements("div", "daily_day-temp", "", "", dvForecastDay, "beforeend");
+  );
+  createDailyElements(
+    "div",
+    "daily_day-temp",
+    "",
+    "",
+    dvForecastDay,
+    "beforeend"
+  );
+  let dvDailyTemps = document.querySelector(`#dvForecastDay${i + 1} .daily_day-temp`);
 
-    // let dvDailyTemps = document.querySelector(`#dvForecastDay${i + 1} .daily_day-temp`);
-    // createDailyElements("p", "daily__day-high", dailyHigh, "", dvDailyTemps, "afterbegin");
-    // createDailyElements("p", "daily__day-low", dailyLow, "", dvDailyTemps, "beforeend");
-  
+  createDailyElements(
+    "p",
+    "daily_day-high",
+    dailyHigh,
+    "",
+    dvDailyTemps,
+    "afterbegin",
+  );
+  createDailyElements(
+    "p",
+    "daily_day-low",
+    dailyLow,
+    "",
+    dvDailyTemps,
+    "beforeend",
+  );
 
-}
+};
 
 //console.log(date);
 
 };
 
-function createDailyElements() {};
+function createDailyElements(tag, className, content, weatherCodeName, parentElement, position) {
+  const newElement = document.createElement(tag);
+  if (className) {
+    newElement.className = className;
+  };
+  if (content) {
+    newElement.textContent = content;
+  };
+
+  if (tag === "img" && weatherCodeName) {
+    newElement.src = `assets/images/icon-${weatherCodeName}.webp`;
+    newElement.alt = `Weather Condition: ${weatherCodeName}`;
+    newElement.width = 60;
+    newElement.height = 60;
+  };
+  parentElement.insertAdjacentElement(position, newElement);
+  return newElement;
+};
 
 
 
