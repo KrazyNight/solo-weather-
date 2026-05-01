@@ -1093,6 +1093,9 @@ const pHumidity = document.querySelector("#pHumidity");
 const pWind = document.querySelector("#pWind");
 const pPrecipitation = document.querySelector("#pPrecipitation");
 
+const ddlDay = document.querySelector("#ddlDay"); //?
+//const ddlDay = document.querySelector("#ddlDay");
+
 
 
 
@@ -1179,7 +1182,7 @@ async function getWeatherData(lat, lon) {
 
     loadCurrentWeather(result); // why do I place this function here
     loadDailyWeather(result);
-    loadHourlyWeather(result)
+    loadHourlyWeather(result);
   } catch (error) {
     console.error(error.message);
   }
@@ -1315,91 +1318,120 @@ function createHourlyElements(tag, className, content, weatherCodeName, parentEl
 };
 
 function loadHourlyWeather(weatherData) {
+  //console.log("loadHourlyWeather()");
+
   let hourly = weatherData.hourly;
   let weatherCodes = hourly.weather_code;
   let temps = hourly.temperature_2m;
   let hours = hourly.time;
-  //console.log()
+  //console.log(hourly)
 
   //loop through 24hrs , 168/24hours  = 7 days 
   // icon weatheCodeName
   //time by hour, get AM And PM
   // temperature_2m, 
+  //
 
-}
+  //let day = parseInt(ddlDay.value, 10); keep for later use
+  let day = 0;
+  console.log(`Day ${day + 1}`);
+  let firstHourOfDay = (24 * day) ;
+  let lastHourOfDay = 24 * (day + 1) - 1 ;
 
-
-
-
-
-
-
-function loadHourlyForecast() {
-  //console.log("loadHourlyForecast()");
-
-
-  let dayIndex = parseInt(ddlDay.value, 10);
-  //console.log(`Day ${dayIndex + 1}`);
-
-
-
-
-  //parseInt(...)
-  // It looks at the string (like "12") and turns it into an actual number (12).
-  //, 10: This is the radix.
-
-  //radix:
-  // 2; Binary: Radix 2 (Digits 0, 1)
-  //10;  Decimal: Radix 10 (Digits 0-9)
-
-  //let dayIndex = parseInt(ddlDay.value, 10);
-  //  Gets the selected day ( 0 for today, 1 for tomorrow) from a dropdown list (ddlDay).
-  // ex: ddlDay: 0: Monday, 1: Tuesday, 2: Wednday, etc...
-
-
-  //console.log(`Day ${dayIndex + 1}`);
-
-  let firstHour = 24 * dayIndex;
-  let lastHour = 24 * (dayIndex + 1) - 1; 
-  // make dayIndex = 0
-  //so dayIndex can only be = 0,1,2,3,4,5,6
-  //access the first hr of the day, Mon, dayIndex 
-
-
-  //accessing the hours of a day, 
-  //0: 0-23
-  //1:24-47
-  //dayIndex: hours being aceess of a day
-  //: Calculates the index range within the hourly data array (0-23 for Day 1, 24-47 for Day 2, etc.).
-
-  let weatherCodes = weatherData.hourly.weather_code;
-  let temps = weatherData.hourly.temperature_2m;
-  let hours = weatherData.hourly.time;
-
-  let id = 1;
-
-  for (let h = firstHour; h <= lastHour; h++) {
-    // console.log(`hour = ${h}`);
-
+  for (let h = firstHourOfDay; h <= lastHourOfDay; h++) {
+    console.log(`hour = ${h}`);
     let weatherCodeName = getWeatherCodeName(weatherCodes[h]);
-    let temp = Math.round(temps[h]) + "°";
+    let temp = temps[h] + "°";
     let hour = new Date(hours[h]).toLocaleString("en-US", { hour: "numeric", hour12: true });
-    let dvForecastHour = document.querySelector(`#dvForecastHour${id}`);
 
-    while (dvForecastHour.firstChild) {
-      dvForecastHour.removeChild(dvForecastHour.firstChild);
-    }
 
-    // console.log(hour, weatherCodeName, temp);
+    console.log(hour); 
+    console.log(weatherCodeName);
+    console.log(temp);
 
-    // console.log(`#dvForecastHour${id}`);
-    addDailyElement("img", "hourly__hour-icon", "", weatherCodeName, dvForecastHour, "afterbegin");
-    addDailyElement("p", "hourly__hour-time", hour, "", dvForecastHour, "beforeend");
-    addDailyElement("p", "hourly__hour-temp", temp, "", dvForecastHour, "beforeend");
+  };
+  //I can only access 24, i nees to access 168.
+  // how do i access this 
+  //day 1: 0, 23
+  //day 2: 24, 47
 
-    id++;
-  }
+
+
+
 }
+
+
+
+
+
+
+
+// function loadHourlyForecast() {
+//   //console.log("loadHourlyForecast()");
+
+
+//   let dayIndex = parseInt(ddlDay.value, 10);
+//   //console.log(`Day ${dayIndex + 1}`);
+
+
+
+
+//   //parseInt(...)
+//   // It looks at the string (like "12") and turns it into an actual number (12).
+//   //, 10: This is the radix.
+
+//   //radix:
+//   // 2; Binary: Radix 2 (Digits 0, 1)
+//   //10;  Decimal: Radix 10 (Digits 0-9)
+
+//   //let dayIndex = parseInt(ddlDay.value, 10);
+//   //  Gets the selected day ( 0 for today, 1 for tomorrow) from a dropdown list (ddlDay).
+//   // ex: ddlDay: 0: Monday, 1: Tuesday, 2: Wednday, etc...
+
+
+//   //console.log(`Day ${dayIndex + 1}`);
+
+//   let firstHour = 24 * dayIndex;
+//   let lastHour = 24 * (dayIndex + 1) - 1; 
+//   // make dayIndex = 0
+//   //so dayIndex can only be = 0,1,2,3,4,5,6
+//   //access the first hr of the day, Mon, dayIndex 
+
+
+//   //accessing the hours of a day, 
+//   //0: 0-23
+//   //1:24-47
+//   //dayIndex: hours being aceess of a day
+//   //: Calculates the index range within the hourly data array (0-23 for Day 1, 24-47 for Day 2, etc.).
+
+//   let weatherCodes = weatherData.hourly.weather_code;
+//   let temps = weatherData.hourly.temperature_2m;
+//   let hours = weatherData.hourly.time;
+
+//   let id = 1;
+
+//   for (let h = firstHour; h <= lastHour; h++) {
+//     // console.log(`hour = ${h}`);
+
+//     let weatherCodeName = getWeatherCodeName(weatherCodes[h]);
+//     let temp = Math.round(temps[h]) + "°";
+//     let hour = new Date(hours[h]).toLocaleString("en-US", { hour: "numeric", hour12: true });
+//     let dvForecastHour = document.querySelector(`#dvForecastHour${id}`);
+
+//     while (dvForecastHour.firstChild) {
+//       dvForecastHour.removeChild(dvForecastHour.firstChild);
+//     }
+
+//     // console.log(hour, weatherCodeName, temp);
+
+//     // console.log(`#dvForecastHour${id}`);
+//     addDailyElement("img", "hourly__hour-icon", "", weatherCodeName, dvForecastHour, "afterbegin");
+//     addDailyElement("p", "hourly__hour-time", hour, "", dvForecastHour, "beforeend");
+//     addDailyElement("p", "hourly__hour-temp", temp, "", dvForecastHour, "beforeend");
+
+//     id++;
+//   }
+// }
 
 
 //function loadHourlyForecast
