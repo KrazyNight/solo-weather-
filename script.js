@@ -1333,21 +1333,45 @@ function loadHourlyWeather(weatherData) {
   //
 
   //let day = parseInt(ddlDay.value, 10); keep for later use
-  let day = 0;
+  let day = 2;
   console.log(`Day ${day + 1}`);
   let firstHourOfDay = (24 * day) ;
   let lastHourOfDay = 24 * (day + 1) - 1 ;
+  let id = 1;
 
   for (let h = firstHourOfDay; h <= lastHourOfDay; h++) {
     console.log(`hour = ${h}`);
     let weatherCodeName = getWeatherCodeName(weatherCodes[h]);
-    let temp = temps[h] + "°";
+    let temp = Math.round(temps[h]) + "°";
     let hour = new Date(hours[h]).toLocaleString("en-US", { hour: "numeric", hour12: true });
+
+    let dvForecastHour = document.querySelector(`dvForecastHour${id}`);
 
 
     console.log(hour); 
     console.log(weatherCodeName);
     console.log(temp);
+    console.log(`#dvForecastHour${id}`);
+
+    // createHourlyElements(
+    //   "img",
+    //   "hourly_forecast-hour-icon",
+    //   "",
+    //   weatherCodeName,
+    //   dvForecastHour,
+    //   "afterbegin",
+    // )
+    // createDailyElements(
+    //   "p",
+    //   "hourly_forecast-hour-time",
+    //   hour,
+    //   "",
+    //   dvForecastHour,
+    //   "beforeend"
+    // );
+    // createHourlyElements("p", "hourly_forecast-hour-temp", temp, "", dvForecastHour, "beforeend");
+
+    id++;
 
   };
   //I can only access 24, i nees to access 168.
@@ -1439,11 +1463,11 @@ function loadHourlyWeather(weatherData) {
 
 
 
-//function getHours() {
-//   for (let h = 0; h <= 23; h++) {
-//     console.log(h);
-//   }
-// }
+function getHours() {
+  for (let h = 0; h <= 23; h++) {
+    console.log(h);
+  }
+}
 
 
 
