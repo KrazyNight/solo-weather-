@@ -1333,7 +1333,7 @@ function loadHourlyWeather(weatherData) {
   //
 
   //let day = parseInt(ddlDay.value, 10); keep for later use
-  let day = 2;
+  let day = 0;
   console.log(`Day ${day + 1}`);
   let firstHourOfDay = (24 * day) ;
   let lastHourOfDay = 24 * (day + 1) - 1 ;
@@ -1345,42 +1345,45 @@ function loadHourlyWeather(weatherData) {
     let temp = Math.round(temps[h]) + "°";
     let hour = new Date(hours[h]).toLocaleString("en-US", { hour: "numeric", hour12: true });
 
-    let dvForecastHour = document.querySelector(`dvForecastHour${id}`);
+    let dvForecastHour = document.querySelector(`#dvForecastHour${id}`);
 
 
     console.log(hour); 
     console.log(weatherCodeName);
     console.log(temp);
     console.log(`#dvForecastHour${id}`);
+    while (dvForecastHour.firstChild) {
+      dvForecastHour.removeChild(dvForecastHour.firstChild);
+    }
 
-    // createHourlyElements(
-    //   "img",
-    //   "hourly_forecast-hour-icon",
-    //   "",
-    //   weatherCodeName,
-    //   dvForecastHour,
-    //   "afterbegin",
-    // )
-    // createDailyElements(
-    //   "p",
-    //   "hourly_forecast-hour-time",
-    //   hour,
-    //   "",
-    //   dvForecastHour,
-    //   "beforeend"
-    // );
-    // createHourlyElements("p", "hourly_forecast-hour-temp", temp, "", dvForecastHour, "beforeend");
+    createHourlyElements(
+      "img",
+      "hourly_forecast-hour-icon",
+      "",
+      weatherCodeName,
+      dvForecastHour,
+      "afterbegin",
+    );
+    createDailyElements(
+      "p",
+      "hourly_forecast-hour-time",
+      hour,
+      "",
+      dvForecastHour,
+      "beforeend"
+    );
+    createHourlyElements(
+      "p",
+      "hourly_forecast-hour-temp",
+      temp,
+      "",
+      dvForecastHour,
+      "beforeend"
+    );
 
     id++;
 
   };
-  //I can only access 24, i nees to access 168.
-  // how do i access this 
-  //day 1: 0, 23
-  //day 2: 24, 47
-
-
-
 
 }
 
