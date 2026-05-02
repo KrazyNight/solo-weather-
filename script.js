@@ -1926,7 +1926,7 @@ const txtSearch = document.querySelector("#txtSearch");
 
 
 
-let cityName, countryName;
+let cityName, countryName, weatherData;
 
 
 
@@ -1961,6 +1961,10 @@ function loadLocationData(locationData){
   let location = locationData[0].address;
   let cityName = location.city;
   let countryName = location.country_code.toUpperCase();
+
+  //// REMOVE 'let' here so you update the global variables
+  // cityName = location.city || location.town || location.village; 
+  //correct bc, Sometimes OpenStreetMap uses .town or .village instead of .city. It’s safer to use location.city || location.town.
 
 
   const today = new Date();
@@ -2007,9 +2011,12 @@ async function getWeatherData(lat, lon) {
     const result = await response.json();
     console.log(result);
 
+    weatherData = result; // Save the data globally
+    
+
     loadCurrentWeather(result); // why do I place this function here
     loadDailyWeather(result);
-    loadHourlyWeather(result);
+    loadHourlyWeather(result); // Initial load for Day 0
   } catch (error) {
     console.error(error.message);
   }
@@ -2143,8 +2150,9 @@ function createHourlyElements(tag, className, content, weatherCodeName, parentEl
   parentElement.insertAdjacentElement(position, newElement);
   return newElement;
 };
-
-function loadHourlyWeather(weatherData) {
+//maybe change from (weatherData) to (dataOrEvent)
+//maybe leave as ()
+function loadHourlyWeather() {
   //console.log("loadHourlyWeather()");
   //console.log("weatherData:", weatherData);
   //console.log("weatherData.hourly:", weatherData?.hourly);
@@ -2236,7 +2244,6 @@ function loadHourlyWeather(weatherData) {
 
 // ddlDay  is wrong
 // function dayOfWeekHourly() is wrong
-const ddlDay =  document.querySelector("#ddlDay");
 
 function dayOfWeekHourly() {
   let currDate = new Date();
@@ -2249,7 +2256,7 @@ function dayOfWeekHourly() {
     const newOption = document.createElement("option");
     const dayOfWeek = document.createTextNode(currDay);
 
-    newOption.setAttribute("class", "hourly__select-day"); // this line is chabged
+    newOption.setAttribute("class", "hourly_day-dropdown"); // this line is chabged
     newOption.setAttribute("value", i);
     newOption.appendChild(dayOfWeek);
 
@@ -2262,8 +2269,6 @@ function dayOfWeekHourly() {
 }
 
 
-dayOfWeekHourly();
-ddlDay.addEventListener("change", loadHourlyWeather);
 
 
 
