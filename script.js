@@ -1530,6 +1530,7 @@
 
 
 
+//example 4 complete above
 //example 4 complete
 //example 4 complete
 //example 4 complete
@@ -1538,8 +1539,7 @@
 //example 4 complete
 //example 4 complete
 //example 4 complete
-//example 4 complete
-//example 4 complete
+//example 4 complete 
 
 
 
@@ -1860,6 +1860,40 @@
 
 
 
+// example 4 : You try, del afterwards
+// example 4 : You try, del afterwards
+// example 4 : You try, del afterwards
+// example 4 : You try, del afterwards
+// example 4 : You try, del afterwards
+// example 4 : You try, del afterwards
+// example 4 : You try, del afterwards
+// example 4 : You try, del afterwards
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// example 4 : You try, del afterwards above 
+// example 4 : You try, del afterwards above 
+// example 4 : You try, del afterwards above
+// example 4 : You try, del afterwards
+// example 4 : You try, del afterwards
+
+
+
+
 
 
 
@@ -1883,24 +1917,19 @@
 // example 5 finish it 
 // example 5 finish it 
 // example 5 finish it 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//continue
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
 
 
 
@@ -1933,7 +1962,7 @@ let cityName, countryName, weatherData;
 
 
 async function getGeoData() {
-  let search = "los angeles, ca"
+  let search = txtSearch.value;
 
   const url = `https://nominatim.openstreetmap.org/search?q=${search}&format=jsonv2&addressdetails=1`;
 
@@ -2242,9 +2271,6 @@ function loadHourlyWeather() {
 
  
 
-// ddlDay  is wrong
-// function dayOfWeekHourly() is wrong
-
 function dayOfWeekHourly() {
   let currDate = new Date();
   let currDay;
@@ -2265,7 +2291,7 @@ function dayOfWeekHourly() {
     currDate.setDate(currDate.getDate() + 1);
   }
 
-  console.log(ddlDay);
+  //console.log(ddlDay);
 }
 
 
@@ -2326,8 +2352,22 @@ function getWeatherCodeName(code){
 
 
 dayOfWeekHourly();
-getGeoData();
+//getGeoData();
 
 ddlUnits.addEventListener("change", getGeoData);
 ddlDay.addEventListener("change", loadHourlyWeather); //why use loadHourlyForecast
-// btnSearch.addEventListener("click", getGeoData);
+btnSearch.addEventListener("click", getGeoData);
+
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
+//complete, project over 
